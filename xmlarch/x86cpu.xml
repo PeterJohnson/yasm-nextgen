@@ -4,7 +4,6 @@
 	<Cpu id="086">
 		<Name>8086</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
 		<FeatureRef idref="Priv"/>
 	</Cpu>
 	<Cpu id="186">
@@ -12,7 +11,6 @@
 		<Name>80186</Name>
 		<Name>i186</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="Priv"/>
 	</Cpu>
@@ -21,7 +19,6 @@
 		<Name>80286</Name>
 		<Name>i286</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="Priv"/>
