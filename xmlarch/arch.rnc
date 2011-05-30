@@ -1,0 +1,87 @@
+start = arch
+
+arch = element Arch {
+	attribute id { text },
+	nm+,
+	descr,
+	(fills & registers & isas & features & cpus)
+	}
+
+# Code fill
+fills = element Fills { codefill* }
+codefill = element CodeFill {
+	attribute id { text },
+	fill+
+	}
+fill = element Fill {
+	attribute size { xsd:int },
+	list { xsd:hexBinary+ }
+	}
+
+# Registers and register groups
+registers = element Registers { (register|reggroup)* }
+register = element Register {
+	attribute id { text },
+	attribute size { xsd:int },
+	attribute value { xsd:int },
+	nm+
+	}
+reggroup = element RegGroup {
+	attribute id { text },
+	nm*,
+	(element RegisterRef {
+		attribute idref { text },
+		attribute index { xsd:int }?
+		} |
+	 register)+
+	}
+
+# ISA
+isas = element Isas { isa+ }
+isa = element Isa {
+	attribute id { text },
+	nm+,
+	descr,
+	(regref|reggroupref|codefillref|featureregmap)+
+	}
+codefillref = element CodeFillRef {
+	attribute idref { text },
+	attribute default { "true" }?,
+	nm+
+	}
+featureregmap = element FeatureRegMap {
+	element FromFeatures { featureref+ },
+	element ToReg { (regref|reggroupref)+ }
+	}
+
+# CPU feature
+features = element Features { feature* }
+feature = element Feature {
+	attribute id { text }?,
+	nm*,
+	descr,
+	(regref|reggroupref|featureref)*
+	}
+
+# CPU
+cpus = element Cpus { cpu* }
+cpu = element Cpu {
+	attribute id { text },
+	nm+,
+	descr?,
+	isaref+,
+	featureref*
+	}
+
+# Reference elements
+isaref = element IsaRef { attribute idref { text } }
+regref = element RegisterRef { attribute idref { text } }
+reggroupref = element RegGroupRef { attribute idref { text } }
+featureref = element FeatureRef { attribute idref { text } }
+
+# Common elements
+nm = element Name { text }
+descr = element Description { text }
+
+
+# vim: set sw=2 ts=2 sts=2:

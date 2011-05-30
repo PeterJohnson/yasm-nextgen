@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<Registers>
+	<!-- traditional floating point Registers -->
+	<RegGroup id="fpu">
+		<Name>st</Name>
+		<Register id="st0" size="80" value="0"><Name>st0</Name></Register>
+		<Register id="st1" size="80" value="1"><Name>st1</Name></Register>
+		<Register id="st2" size="80" value="2"><Name>st2</Name></Register>
+		<Register id="st3" size="80" value="3"><Name>st3</Name></Register>
+		<Register id="st4" size="80" value="4"><Name>st4</Name></Register>
+		<Register id="st5" size="80" value="5"><Name>st5</Name></Register>
+		<Register id="st6" size="80" value="6"><Name>st6</Name></Register>
+		<Register id="st7" size="80" value="7"><Name>st7</Name></Register>
+	</RegGroup>
+
+	<!-- 64-bit MMX Registers -->
+	<RegGroup id="mmx">
+		<Name>mm</Name>
+		<Register id="mm0" size="64" value="0"><Name>mm0</Name></Register>
+		<Register id="mm1" size="64" value="1"><Name>mm1</Name></Register>
+		<Register id="mm2" size="64" value="2"><Name>mm2</Name></Register>
+		<Register id="mm3" size="64" value="3"><Name>mm3</Name></Register>
+		<Register id="mm4" size="64" value="4"><Name>mm4</Name></Register>
+		<Register id="mm5" size="64" value="5"><Name>mm5</Name></Register>
+		<Register id="mm6" size="64" value="6"><Name>mm6</Name></Register>
+		<Register id="mm7" size="64" value="7"><Name>mm7</Name></Register>
+	</RegGroup>
+
+	<!-- 128-bit SSE Registers -->
+	<RegGroup id="xmm">
+		<Name>xmm</Name>
+		<Register id="xmm0" size="128" value="0"><Name>xmm0</Name></Register>
+		<Register id="xmm1" size="128" value="1"><Name>xmm1</Name></Register>
+		<Register id="xmm2" size="128" value="2"><Name>xmm2</Name></Register>
+		<Register id="xmm3" size="128" value="3"><Name>xmm3</Name></Register>
+		<Register id="xmm4" size="128" value="4"><Name>xmm4</Name></Register>
+		<Register id="xmm5" size="128" value="5"><Name>xmm5</Name></Register>
+		<Register id="xmm6" size="128" value="6"><Name>xmm6</Name></Register>
+		<Register id="xmm7" size="128" value="7"><Name>xmm7</Name></Register>
+	</RegGroup>
+	<RegGroup id="xmm64">
+		<Name>xmm</Name>
+		<RegisterRef idref="xmm0"/>
+		<RegisterRef idref="xmm1"/>
+		<RegisterRef idref="xmm2"/>
+		<RegisterRef idref="xmm3"/>
+		<RegisterRef idref="xmm4"/>
+		<RegisterRef idref="xmm5"/>
+		<RegisterRef idref="xmm6"/>
+		<RegisterRef idref="xmm7"/>
+		<Register id="xmm8" size="128" value="8"><Name>xmm8</Name></Register>
+		<Register id="xmm9" size="128" value="9"><Name>xmm9</Name></Register>
+		<Register id="xmm10" size="128" value="10"><Name>xmm10</Name></Register>
+		<Register id="xmm11" size="128" value="11"><Name>xmm11</Name></Register>
+		<Register id="xmm12" size="128" value="12"><Name>xmm12</Name></Register>
+		<Register id="xmm13" size="128" value="13"><Name>xmm13</Name></Register>
+		<Register id="xmm14" size="128" value="14"><Name>xmm14</Name></Register>
+		<Register id="xmm15" size="128" value="15"><Name>xmm15</Name></Register>
+	</RegGroup>
+
+	<!-- 256-bit AVX Registers -->
+	<RegGroup id="ymm">
+		<Name>ymm</Name>
+		<Register id="ymm0" size="256" value="0"><Name>ymm0</Name></Register>
+		<Register id="ymm1" size="256" value="1"><Name>ymm1</Name></Register>
+		<Register id="ymm2" size="256" value="2"><Name>ymm2</Name></Register>
+		<Register id="ymm3" size="256" value="3"><Name>ymm3</Name></Register>
+		<Register id="ymm4" size="256" value="4"><Name>ymm4</Name></Register>
+		<Register id="ymm5" size="256" value="5"><Name>ymm5</Name></Register>
+		<Register id="ymm6" size="256" value="6"><Name>ymm6</Name></Register>
+		<Register id="ymm7" size="256" value="7"><Name>ymm7</Name></Register>
+	</RegGroup>
+	<RegGroup id="ymm64">
+		<Name>ymm</Name>
+		<RegisterRef idref="ymm0"/>
+		<RegisterRef idref="ymm1"/>
+		<RegisterRef idref="ymm2"/>
+		<RegisterRef idref="ymm3"/>
+		<RegisterRef idref="ymm4"/>
+		<RegisterRef idref="ymm5"/>
+		<RegisterRef idref="ymm6"/>
+		<RegisterRef idref="ymm7"/>
+		<Register id="ymm8" size="256" value="8"><Name>ymm8</Name></Register>
+		<Register id="ymm9" size="256" value="9"><Name>ymm9</Name></Register>
+		<Register id="ymm10" size="256" value="10"><Name>ymm10</Name></Register>
+		<Register id="ymm11" size="256" value="11"><Name>ymm11</Name></Register>
+		<Register id="ymm12" size="256" value="12"><Name>ymm12</Name></Register>
+		<Register id="ymm13" size="256" value="13"><Name>ymm13</Name></Register>
+		<Register id="ymm14" size="256" value="14"><Name>ymm14</Name></Register>
+		<Register id="ymm15" size="256" value="15"><Name>ymm15</Name></Register>
+	</RegGroup>
+
+	<!-- standard 8-bit integer Registers -->
+	<RegGroup id="reg8">
+		<Register id="al" size="8" value="0"><Name>al</Name></Register>
+		<Register id="cl" size="8" value="1"><Name>cl</Name></Register>
+		<Register id="dl" size="8" value="2"><Name>dl</Name></Register>
+		<Register id="bl" size="8" value="3"><Name>bl</Name></Register>
+		<Register id="ah" size="8" value="4"><Name>ah</Name></Register>
+		<Register id="ch" size="8" value="5"><Name>ch</Name></Register>
+		<Register id="dh" size="8" value="6"><Name>dh</Name></Register>
+		<Register id="bh" size="8" value="7"><Name>bh</Name></Register>
+	</RegGroup>
+
+	<!-- standard 16-bit integer Registers -->
+	<RegGroup id="reg16">
+		<Register id="ax" size="16" value="0"><Name>ax</Name></Register>
+		<Register id="cx" size="16" value="1"><Name>cx</Name></Register>
+		<Register id="dx" size="16" value="2"><Name>dx</Name></Register>
+		<Register id="bx" size="16" value="3"><Name>bx</Name></Register>
+		<Register id="sp" size="16" value="4"><Name>sp</Name></Register>
+		<Register id="bp" size="16" value="5"><Name>bp</Name></Register>
+		<Register id="si" size="16" value="6"><Name>si</Name></Register>
+		<Register id="di" size="16" value="7"><Name>di</Name></Register>
+	</RegGroup>
+
+	<!-- standard 32-bit integer Registers -->
+	<RegGroup id="reg32">
+		<Register id="eax" size="32" value="0"><Name>eax</Name></Register>
+		<Register id="ecx" size="32" value="1"><Name>ecx</Name></Register>
+		<Register id="edx" size="32" value="2"><Name>edx</Name></Register>
+		<Register id="ebx" size="32" value="3"><Name>ebx</Name></Register>
+		<Register id="esp" size="32" value="4"><Name>esp</Name></Register>
+		<Register id="ebp" size="32" value="5"><Name>ebp</Name></Register>
+		<Register id="esi" size="32" value="6"><Name>esi</Name></Register>
+		<Register id="edi" size="32" value="7"><Name>edi</Name></Register>
+	</RegGroup>
+
+	<!-- extended 8-bit integer Registers -->
+	<RegGroup id="reg8x">
+		<RegisterRef idref="al"/>
+		<RegisterRef idref="cl"/>
+		<RegisterRef idref="dl"/>
+		<RegisterRef idref="bl"/>
+		<Register id="spl" size="8" value="4"><Name>spl</Name></Register>
+		<Register id="bpl" size="8" value="5"><Name>bpl</Name></Register>
+		<Register id="sil" size="8" value="6"><Name>sil</Name></Register>
+		<Register id="dil" size="8" value="7"><Name>dil</Name></Register>
+		<Register id="r8b" size="8" value="8"><Name>r8b</Name></Register>
+		<Register id="r9b" size="8" value="9"><Name>r9b</Name></Register>
+		<Register id="r10b" size="8" value="10"><Name>r10b</Name></Register>
+		<Register id="r11b" size="8" value="11"><Name>r11b</Name></Register>
+		<Register id="r12b" size="8" value="12"><Name>r12b</Name></Register>
+		<Register id="r13b" size="8" value="13"><Name>r13b</Name></Register>
+		<Register id="r14b" size="8" value="14"><Name>r14b</Name></Register>
+		<Register id="r15b" size="8" value="15"><Name>r15b</Name></Register>
+	</RegGroup>
+
+	<!-- extended 16-bit integer Registers -->
+	<RegGroup id="reg16x">
+		<RegisterRef idref="ax"/>
+		<RegisterRef idref="cx"/>
+		<RegisterRef idref="dx"/>
+		<RegisterRef idref="bx"/>
+		<RegisterRef idref="sp"/>
+		<RegisterRef idref="bp"/>
+		<RegisterRef idref="si"/>
+		<RegisterRef idref="di"/>
+		<Register id="r8w" size="16" value="8"><Name>r8w</Name></Register>
+		<Register id="r9w" size="16" value="9"><Name>r9w</Name></Register>
+		<Register id="r10w" size="16" value="10"><Name>r10w</Name></Register>
+		<Register id="r11w" size="16" value="11"><Name>r11w</Name></Register>
+		<Register id="r12w" size="16" value="12"><Name>r12w</Name></Register>
+		<Register id="r13w" size="16" value="13"><Name>r13w</Name></Register>
+		<Register id="r14w" size="16" value="14"><Name>r14w</Name></Register>
+		<Register id="r15w" size="16" value="15"><Name>r15w</Name></Register>
+	</RegGroup>
+
+	<!-- extended 32-bit integer Registers -->
+	<RegGroup id="reg32x">
+		<RegisterRef idref="eax"/>
+		<RegisterRef idref="ecx"/>
+		<RegisterRef idref="edx"/>
+		<RegisterRef idref="ebx"/>
+		<RegisterRef idref="esp"/>
+		<RegisterRef idref="ebp"/>
+		<RegisterRef idref="esi"/>
+		<RegisterRef idref="edi"/>
+		<Register id="r8d" size="32" value="8"><Name>r8d</Name></Register>
+		<Register id="r9d" size="32" value="9"><Name>r9d</Name></Register>
+		<Register id="r10d" size="32" value="10"><Name>r10d</Name></Register>
+		<Register id="r11d" size="32" value="11"><Name>r11d</Name></Register>
+		<Register id="r12d" size="32" value="12"><Name>r12d</Name></Register>
+		<Register id="r13d" size="32" value="13"><Name>r13d</Name></Register>
+		<Register id="r14d" size="32" value="14"><Name>r14d</Name></Register>
+		<Register id="r15d" size="32" value="15"><Name>r15d</Name></Register>
+	</RegGroup>
+
+	<!-- 64-bit integer Registers -->
+	<RegGroup id="reg64">
+		<Register id="rax" size="64" value="0"><Name>eax</Name></Register>
+		<Register id="rcx" size="64" value="1"><Name>ecx</Name></Register>
+		<Register id="rdx" size="64" value="2"><Name>edx</Name></Register>
+		<Register id="rbx" size="64" value="3"><Name>ebx</Name></Register>
+		<Register id="rsp" size="64" value="4"><Name>esp</Name></Register>
+		<Register id="rbp" size="64" value="5"><Name>ebp</Name></Register>
+		<Register id="rsi" size="64" value="6"><Name>esi</Name></Register>
+		<Register id="rdi" size="64" value="7"><Name>rdi</Name></Register>
+		<Register id="r8" size="64" value="8"><Name>r8</Name></Register>
+		<Register id="r9" size="64" value="9"><Name>r9</Name></Register>
+		<Register id="r10" size="64" value="10"><Name>r10</Name></Register>
+		<Register id="r11" size="64" value="11"><Name>r11</Name></Register>
+		<Register id="r12" size="64" value="12"><Name>r12</Name></Register>
+		<Register id="r13" size="64" value="13"><Name>r13</Name></Register>
+		<Register id="r14" size="64" value="14"><Name>r14</Name></Register>
+		<Register id="r15" size="64" value="15"><Name>r15</Name></Register>
+	</RegGroup>
+</Registers>
+
+<!-- vim: set ts=2 sw=2 sts=2 tw=78 noet: -->

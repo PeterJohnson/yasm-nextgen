@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<!-- Processor Features -->
+<Features>
+	<Feature id="186">
+		<Description>introduced in 80186</Description>
+	</Feature>
+	<Feature id="286">
+		<Description>introduced in 80286</Description>
+	</Feature>
+	<Feature id="386">
+		<Description>introduced in 80386</Description>
+	</Feature>
+	<Feature id="486">
+		<Description>introduced in 80486</Description>
+	</Feature>
+	<Feature id="586">
+		<Description>introduced in Pentium</Description>
+	</Feature>
+	<Feature id="686">
+		<Description>introduced in Pentium Pro</Description>
+	</Feature>
+	<Feature id="P3">
+		<Description>introduced in Pentium III</Description>
+	</Feature>
+	<Feature id="P4">
+		<Description>introduced in Pentium IV</Description>
+	</Feature>
+	<Feature id="IA64">
+		<Description>introduced in Itanium</Description>
+	</Feature>
+	<Feature id="K6">
+		<Description>introduced in AMD K6</Description>
+	</Feature>
+	<Feature id="Athlon">
+		<Description>introduced in AMD Athlon</Description>
+	</Feature>
+	<Feature id="Hammer">
+		<Description>introduced in AMD Sledgehammer</Description>
+	</Feature>
+	<Feature id="FPU">
+		<Name>fpu</Name>
+		<Description>FPU instruction</Description>
+	</Feature>
+	<Feature id="MMX">
+		<Name>mmx</Name>
+		<Description>MMX instruction</Description>
+	</Feature>
+	<Feature id="SSE">
+		<Name>sse</Name>
+		<Description>Streaming SIMD extensions</Description>
+	</Feature>
+	<Feature id="SSE2">
+		<Name>sse2</Name>
+		<Description>Streaming SIMD extensions 2</Description>
+	</Feature>
+	<Feature id="SSE3">
+		<Name>sse3</Name>
+		<Description>Streaming SIMD extensions 3</Description>
+	</Feature>
+	<Feature id="3DNow">
+		<Name>3dnow</Name>
+		<Description>AMD 3DNow!</Description>
+	</Feature>
+	<Feature id="Cyrix">
+		<Name>cyrix</Name>
+		<Description>Cyrix extension</Description>
+	</Feature>
+	<Feature id="AMD">
+		<Name>amd</Name>
+		<Description>Pre-K6 AMD extension</Description>
+	</Feature>
+	<Feature id="SMM">
+		<Name>smm</Name>
+		<Description>System Management Mode</Description>
+	</Feature>
+	<Feature id="Prot">
+		<Name>prot</Name>
+		<Name>protected</Name>
+		<Description>Protected Mode</Description>
+	</Feature>
+	<Feature id="Undoc">
+		<Name>undoc</Name>
+		<Name>undocumented</Name>
+		<Description>Undocumented</Description>
+	</Feature>
+	<Feature id="Obs">
+		<Name>obs</Name>
+		<Name>obsolete</Name>
+		<Description>Obsolete</Description>
+	</Feature>
+	<Feature id="Priv">
+		<Name>priv</Name>
+		<Name>privileged</Name>
+		<Description>Privileged</Description>
+	</Feature>
+	<Feature id="SVM">
+		<Name>svm</Name>
+		<Description>Secure Virtual Machine</Description>
+	</Feature>
+	<Feature id="PadLock">
+		<Name>padlock</Name>
+		<Description>VIA PadLock</Description>
+	</Feature>
+	<Feature id="EM64T">
+		<Name>em64t</Name>
+		<Description>Intel EM64T</Description>
+	</Feature>
+	<Feature id="SSSE3">
+		<Name>ssse3</Name>
+		<Description>Streaming SIMD extensions 3</Description>
+	</Feature>
+	<Feature id="SSE41">
+		<Name>sse4.1</Name>
+		<Name>sse41</Name>
+		<Description>Streaming SIMD extensions 4.1</Description>
+	</Feature>
+	<Feature id="SSE42">
+		<Name>sse4.2</Name>
+		<Name>sse42</Name>
+		<Description>Streaming SIMD extensions 4.2</Description>
+	</Feature>
+	<Feature>
+		<Name>sse4</Name>
+		<Description>Streaming SIMD extensions 4.1 and 4.2</Description>
+		<FeatureRef idref="SSE41"/>
+		<FeatureRef idref="SSE42"/>
+	</Feature>
+	<Feature id="SSE4a">
+		<Name>sse4a</Name>
+		<Description>AMD Streaming SIMD extensions 4</Description>
+	</Feature>
+	<Feature id="XSAVE">
+		<Name>xsave</Name>
+		<Description>Intel XSAVE</Description>
+	</Feature>
+	<Feature id="AVX">
+		<Name>avx</Name>
+		<Description>Intel Advanced Vector Extensions</Description>
+	</Feature>
+	<Feature id="FMA">
+		<Name>fma</Name>
+		<Description>Intel Fused-Multiply-Add Extensions</Description>
+	</Feature>
+	<Feature id="AES">
+		<Name>aes</Name>
+		<Description>AES instructions</Description>
+	</Feature>
+	<Feature id="CLMUL">
+		<Name>clmul</Name>
+		<Name>pclmulqdq</Name>
+		<Description>PCLMULQDQ instruction</Description>
+	</Feature>
+	<Feature id="MOVBE">
+		<Name>movbe</Name>
+		<Description>MOVBE instruction</Description>
+	</Feature>
+	<Feature id="XOP">
+		<Name>xop</Name>
+		<Description>AMD XOP extensions</Description>
+	</Feature>
+	<Feature id="FMA4">
+		<Name>fma4</Name>
+		<Description>AMD Fused-Multiply-Add extensions</Description>
+	</Feature>
+	<Feature id="F16C">
+		<Name>f16c</Name>
+		<Description>Intel float-16 instructions</Description>
+	</Feature>
+	<Feature id="FSGSBASE">
+		<Name>fsgsbase</Name>
+		<Description>Intel FSGSBASE instructions</Description>
+	</Feature>
+	<Feature id="RDRAND">
+		<Name>rdrand</Name>
+		<Description>Intel RDRAND instruction</Description>
+	</Feature>
+	<Feature id="XSAVEOPT">
+		<Name>xsaveopt</Name>
+		<Description>Intel XSAVEOPT instruction</Description>
+	</Feature>
+	<Feature id="EPTVPID">
+		<Name>eptvpid</Name>
+		<Description>Intel INVEPT, INVVPID instructions</Description>
+	</Feature>
+	<Feature id="SMX">
+		<Name>smx</Name>
+		<Description>Intel SMX instruction (GETSEC)</Description>
+	</Feature>
+</Features>
+
+<!-- vim: set ts=2 sw=2 sts=2 tw=78 noet: -->

@@ -1,0 +1,512 @@
+<?xml version="1.0"?>
+<Cpus>
+	<!-- Intel processors -->
+	<Cpu id="086">
+		<Name>8086</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<FeatureRef idref="Priv"/>
+	</Cpu>
+	<Cpu id="186">
+		<Name>186</Name>
+		<Name>80186</Name>
+		<Name>i186</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="Priv"/>
+	</Cpu>
+	<Cpu id="286">
+		<Name>286</Name>
+		<Name>80286</Name>
+		<Name>i286</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+	</Cpu>
+	<Cpu id="386">
+		<Name>386</Name>
+		<Name>80386</Name>
+		<Name>i386</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="386"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+		<FeatureRef idref="SMM"/>
+	</Cpu>
+	<Cpu id="486">
+		<Name>486</Name>
+		<Name>80486</Name>
+		<Name>i486</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="386"/>
+		<FeatureRef idref="486"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+		<FeatureRef idref="SMM"/>
+		<FeatureRef idref="FPU"/>
+	</Cpu>
+	<Cpu id="586">
+		<Name>586</Name>
+		<Name>i586</Name>
+		<Name>pentium</Name>
+		<Name>p5</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="386"/>
+		<FeatureRef idref="486"/>
+		<FeatureRef idref="586"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+		<FeatureRef idref="SMM"/>
+		<FeatureRef idref="FPU"/>
+	</Cpu>
+	<Cpu id="686">
+		<Name>686</Name>
+		<Name>i686</Name>
+		<Name>p6</Name>
+		<Name>ppro</Name>
+		<Name>pentiumpro</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="386"/>
+		<FeatureRef idref="486"/>
+		<FeatureRef idref="586"/>
+		<FeatureRef idref="686"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+		<FeatureRef idref="SMM"/>
+		<FeatureRef idref="FPU"/>
+	</Cpu>
+	<Cpu id="686">
+		<Name>686</Name>
+		<Name>i686</Name>
+		<Name>p6</Name>
+		<Name>ppro</Name>
+		<Name>pentiumpro</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="386"/>
+		<FeatureRef idref="486"/>
+		<FeatureRef idref="586"/>
+		<FeatureRef idref="686"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+		<FeatureRef idref="SMM"/>
+		<FeatureRef idref="FPU"/>
+	</Cpu>
+	<Cpu id="P2">
+		<Name>p2</Name>
+		<Name>pentium2</Name>
+		<Name>pentium-2</Name>
+		<Name>pentiumii</Name>
+		<Name>pentium-ii</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="386"/>
+		<FeatureRef idref="486"/>
+		<FeatureRef idref="586"/>
+		<FeatureRef idref="686"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+		<FeatureRef idref="SMM"/>
+		<FeatureRef idref="FPU"/>
+		<FeatureRef idref="MMX"/>
+	</Cpu>
+	<Cpu id="P3">
+		<Name>p3</Name>
+		<Name>pentium3</Name>
+		<Name>pentium-3</Name>
+		<Name>pentiumiii</Name>
+		<Name>pentium-iii</Name>
+		<Name>katmai</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="386"/>
+		<FeatureRef idref="486"/>
+		<FeatureRef idref="586"/>
+		<FeatureRef idref="686"/>
+		<FeatureRef idref="P3"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+		<FeatureRef idref="SMM"/>
+		<FeatureRef idref="FPU"/>
+		<FeatureRef idref="MMX"/>
+		<FeatureRef idref="SSE"/>
+	</Cpu>
+	<Cpu id="P4">
+		<Name>p4</Name>
+		<Name>pentium4</Name>
+		<Name>pentium-4</Name>
+		<Name>pentiumiv</Name>
+		<Name>pentium-iv</Name>
+		<Name>williamette</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="386"/>
+		<FeatureRef idref="486"/>
+		<FeatureRef idref="586"/>
+		<FeatureRef idref="686"/>
+		<FeatureRef idref="P3"/>
+		<FeatureRef idref="P4"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+		<FeatureRef idref="SMM"/>
+		<FeatureRef idref="FPU"/>
+		<FeatureRef idref="MMX"/>
+		<FeatureRef idref="SSE"/>
+		<FeatureRef idref="SSE2"/>
+	</Cpu>
+	<Cpu id="IA64">
+		<Name>ia64</Name>
+		<Name>ia-64</Name>
+		<Name>itanium</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="386"/>
+		<FeatureRef idref="486"/>
+		<FeatureRef idref="586"/>
+		<FeatureRef idref="686"/>
+		<FeatureRef idref="P3"/>
+		<FeatureRef idref="P4"/>
+		<FeatureRef idref="IA64"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+		<FeatureRef idref="SMM"/>
+		<FeatureRef idref="FPU"/>
+		<FeatureRef idref="MMX"/>
+		<FeatureRef idref="SSE"/>
+		<FeatureRef idref="SSE2"/>
+	</Cpu>
+	<Cpu id="Prescott">
+		<Name>prescott</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="386"/>
+		<FeatureRef idref="486"/>
+		<FeatureRef idref="586"/>
+		<FeatureRef idref="686"/>
+		<FeatureRef idref="P3"/>
+		<FeatureRef idref="P4"/>
+		<FeatureRef idref="IA64"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+		<FeatureRef idref="SMM"/>
+		<FeatureRef idref="FPU"/>
+		<FeatureRef idref="MMX"/>
+		<FeatureRef idref="SSE"/>
+		<FeatureRef idref="SSE2"/>
+		<FeatureRef idref="SSE3"/>
+	</Cpu>
+	<Cpu id="Conroe">
+		<Name>conroe</Name>
+		<Name>core2</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<IsaRef idref="amd64"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="386"/>
+		<FeatureRef idref="486"/>
+		<FeatureRef idref="586"/>
+		<FeatureRef idref="686"/>
+		<FeatureRef idref="P3"/>
+		<FeatureRef idref="P4"/>
+		<FeatureRef idref="IA64"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+		<FeatureRef idref="SMM"/>
+		<FeatureRef idref="FPU"/>
+		<FeatureRef idref="MMX"/>
+		<FeatureRef idref="SSE"/>
+		<FeatureRef idref="SSE2"/>
+		<FeatureRef idref="SSE3"/>
+		<FeatureRef idref="SSSE3"/>
+	</Cpu>
+	<Cpu id="Penryn">
+		<Name>penryn</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<IsaRef idref="amd64"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="386"/>
+		<FeatureRef idref="486"/>
+		<FeatureRef idref="586"/>
+		<FeatureRef idref="686"/>
+		<FeatureRef idref="P3"/>
+		<FeatureRef idref="P4"/>
+		<FeatureRef idref="IA64"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+		<FeatureRef idref="SMM"/>
+		<FeatureRef idref="FPU"/>
+		<FeatureRef idref="MMX"/>
+		<FeatureRef idref="SSE"/>
+		<FeatureRef idref="SSE2"/>
+		<FeatureRef idref="SSE3"/>
+		<FeatureRef idref="SSSE3"/>
+		<FeatureRef idref="SSE41"/>
+	</Cpu>
+	<Cpu id="Nehalem">
+		<Name>nehalem</Name>
+		<Name>corei7</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<IsaRef idref="amd64"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="386"/>
+		<FeatureRef idref="486"/>
+		<FeatureRef idref="586"/>
+		<FeatureRef idref="686"/>
+		<FeatureRef idref="P3"/>
+		<FeatureRef idref="P4"/>
+		<FeatureRef idref="IA64"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+		<FeatureRef idref="SMM"/>
+		<FeatureRef idref="FPU"/>
+		<FeatureRef idref="MMX"/>
+		<FeatureRef idref="SSE"/>
+		<FeatureRef idref="SSE2"/>
+		<FeatureRef idref="SSE3"/>
+		<FeatureRef idref="SSSE3"/>
+		<FeatureRef idref="SSE41"/>
+		<FeatureRef idref="SSE42"/>
+		<FeatureRef idref="XSAVE"/>
+	</Cpu>
+	<Cpu id="Westmere">
+		<Name>westmere</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<IsaRef idref="amd64"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="386"/>
+		<FeatureRef idref="486"/>
+		<FeatureRef idref="586"/>
+		<FeatureRef idref="686"/>
+		<FeatureRef idref="P3"/>
+		<FeatureRef idref="P4"/>
+		<FeatureRef idref="IA64"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+		<FeatureRef idref="SMM"/>
+		<FeatureRef idref="FPU"/>
+		<FeatureRef idref="MMX"/>
+		<FeatureRef idref="SSE"/>
+		<FeatureRef idref="SSE2"/>
+		<FeatureRef idref="SSE3"/>
+		<FeatureRef idref="SSSE3"/>
+		<FeatureRef idref="SSE41"/>
+		<FeatureRef idref="SSE42"/>
+		<FeatureRef idref="XSAVE"/>
+		<FeatureRef idref="AES"/>
+		<FeatureRef idref="CLMUL"/>
+	</Cpu>
+	<Cpu id="Sandybridge">
+		<Name>sandybridge</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<IsaRef idref="amd64"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="386"/>
+		<FeatureRef idref="486"/>
+		<FeatureRef idref="586"/>
+		<FeatureRef idref="686"/>
+		<FeatureRef idref="P3"/>
+		<FeatureRef idref="P4"/>
+		<FeatureRef idref="IA64"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+		<FeatureRef idref="SMM"/>
+		<FeatureRef idref="FPU"/>
+		<FeatureRef idref="MMX"/>
+		<FeatureRef idref="SSE"/>
+		<FeatureRef idref="SSE2"/>
+		<FeatureRef idref="SSE3"/>
+		<FeatureRef idref="SSSE3"/>
+		<FeatureRef idref="SSE41"/>
+		<FeatureRef idref="SSE42"/>
+		<FeatureRef idref="XSAVE"/>
+		<FeatureRef idref="AES"/>
+		<FeatureRef idref="CLMUL"/>
+		<FeatureRef idref="AVX"/>
+	</Cpu>
+
+	<!-- AMD processors -->
+	<Cpu id="K6">
+		<Name>k6</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="386"/>
+		<FeatureRef idref="486"/>
+		<FeatureRef idref="586"/>
+		<FeatureRef idref="686"/>
+		<FeatureRef idref="K6"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+		<FeatureRef idref="SMM"/>
+		<FeatureRef idref="FPU"/>
+		<FeatureRef idref="3DNow"/>
+		<FeatureRef idref="MMX"/>
+	</Cpu>
+	<Cpu id="Athlon">
+		<Name>k7</Name>
+		<Name>athlon</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="386"/>
+		<FeatureRef idref="486"/>
+		<FeatureRef idref="586"/>
+		<FeatureRef idref="686"/>
+		<FeatureRef idref="K6"/>
+		<FeatureRef idref="Athlon"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+		<FeatureRef idref="SMM"/>
+		<FeatureRef idref="FPU"/>
+		<FeatureRef idref="3DNow"/>
+		<FeatureRef idref="MMX"/>
+		<FeatureRef idref="SSE"/>
+	</Cpu>
+	<Cpu id="Hammer">
+		<Name>k8</Name>
+		<Name>hammer</Name>
+		<Name>clawhammer</Name>
+		<Name>opteron</Name>
+		<Name>athlon64</Name>
+		<Name>athlon-64</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<IsaRef idref="amd64"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="386"/>
+		<FeatureRef idref="486"/>
+		<FeatureRef idref="586"/>
+		<FeatureRef idref="686"/>
+		<FeatureRef idref="K6"/>
+		<FeatureRef idref="Athlon"/>
+		<FeatureRef idref="Hammer"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+		<FeatureRef idref="SMM"/>
+		<FeatureRef idref="FPU"/>
+		<FeatureRef idref="3DNow"/>
+		<FeatureRef idref="MMX"/>
+		<FeatureRef idref="SSE"/>
+		<FeatureRef idref="SSE2"/>
+	</Cpu>
+	<Cpu id="Venice">
+		<Name>venice</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<IsaRef idref="amd64"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="386"/>
+		<FeatureRef idref="486"/>
+		<FeatureRef idref="586"/>
+		<FeatureRef idref="686"/>
+		<FeatureRef idref="K6"/>
+		<FeatureRef idref="Athlon"/>
+		<FeatureRef idref="Hammer"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+		<FeatureRef idref="SMM"/>
+		<FeatureRef idref="FPU"/>
+		<FeatureRef idref="3DNow"/>
+		<FeatureRef idref="MMX"/>
+		<FeatureRef idref="SSE"/>
+		<FeatureRef idref="SSE2"/>
+		<FeatureRef idref="SSE3"/>
+	</Cpu>
+	<Cpu id="K10">
+		<Name>k10</Name>
+		<Name>phenom</Name>
+		<Name>family10h</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<IsaRef idref="amd64"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="386"/>
+		<FeatureRef idref="486"/>
+		<FeatureRef idref="586"/>
+		<FeatureRef idref="686"/>
+		<FeatureRef idref="K6"/>
+		<FeatureRef idref="Athlon"/>
+		<FeatureRef idref="Hammer"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+		<FeatureRef idref="SMM"/>
+		<FeatureRef idref="FPU"/>
+		<FeatureRef idref="3DNow"/>
+		<FeatureRef idref="MMX"/>
+		<FeatureRef idref="SSE"/>
+		<FeatureRef idref="SSE2"/>
+		<FeatureRef idref="SSE3"/>
+		<FeatureRef idref="SSE4a"/>
+	</Cpu>
+	<Cpu id="Bulldozer">
+		<Name>bulldozer</Name>
+		<IsaRef idref="16"/>
+		<IsaRef idref="x86"/>
+		<IsaRef idref="amd64"/>
+		<FeatureRef idref="186"/>
+		<FeatureRef idref="286"/>
+		<FeatureRef idref="386"/>
+		<FeatureRef idref="486"/>
+		<FeatureRef idref="586"/>
+		<FeatureRef idref="686"/>
+		<FeatureRef idref="K6"/>
+		<FeatureRef idref="Athlon"/>
+		<FeatureRef idref="Hammer"/>
+		<FeatureRef idref="Priv"/>
+		<FeatureRef idref="Prot"/>
+		<FeatureRef idref="SMM"/>
+		<FeatureRef idref="FPU"/>
+		<FeatureRef idref="3DNow"/>
+		<FeatureRef idref="MMX"/>
+		<FeatureRef idref="SSE"/>
+		<FeatureRef idref="SSE2"/>
+		<FeatureRef idref="SSE3"/>
+		<FeatureRef idref="SSE4a"/>
+		<FeatureRef idref="XOP"/>
+		<FeatureRef idref="FMA4"/>
+	</Cpu>
+</Cpus>
+
+<!-- vim: set ts=2 sw=2 sts=2 tw=78 noet: -->

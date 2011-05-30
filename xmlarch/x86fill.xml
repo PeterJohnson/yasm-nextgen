@@ -1,0 +1,313 @@
+<?xml version="1.0"?>
+<Fills>
+	<!-- 16-bit nop patterns that GAS uses. -->
+	<CodeFill id="16">
+		<Fill size="1">
+			90                       <!-- nop -->
+		</Fill>
+		<Fill size="2">
+			89 F6                    <!-- mov si, si -->
+		</Fill>
+		<Fill size="3">
+			8D 74 00                 <!-- lea si, [si+byte 0] -->
+		</Fill>
+		<Fill size="4">
+			8D B4 00 00              <!-- lea si, [si+word 0] -->
+		</Fill>
+		<Fill size="5">
+			90                       <!-- nop -->
+			8D B4 00 00              <!-- lea si, [si+word 0] -->
+		</Fill>
+		<Fill size="6">
+			89 F6                    <!-- mov si, si -->
+			8D BD 00 00              <!-- lea di, [di+word 0] -->
+		</Fill>
+		<Fill size="7">
+			8D 74 00                 <!-- lea si, [si+byte 0] -->
+			8D BD 00 00              <!-- lea di, [di+word 0] -->
+		</Fill>
+		<Fill size="8">
+			8D B4 00 00              <!-- lea si, [si+word 0] -->
+			8D BD 00 00              <!-- lea di, [di+word 0] -->
+		</Fill>
+		<Fill size="9">
+			EB 07                    <!-- jmp $+9 -->
+			90 90 90 90 90 90 90     <!-- nop Fill -->
+		</Fill>
+		<Fill size="10">
+			EB 08	                   <!-- jmp $+10 -->
+			90 90 90 90 90 90 90 90  <!-- nop Fill -->
+		</Fill>
+		<Fill size="11">
+			EB 09                    <!-- jmp $+11 -->
+			90 90 90 90 90 90 90 90  <!-- nop Fill -->
+			90
+		</Fill>
+		<Fill size="12">
+			EB 0A                    <!-- jmp $+12 -->
+			90 90 90 90 90 90 90 90  <!-- nop Fill -->
+			90 90
+		</Fill>
+		<Fill size="13">
+			EB 0B                    <!-- jmp $+13 -->
+			90 90 90 90 90 90 90 90  <!-- nop Fill -->
+			90 90 90
+		</Fill>
+		<Fill size="14">
+			EB 0C                    <!-- jmp $+14 -->
+			90 90 90 90 90 90 90 90  <!-- nop Fill -->
+			90 90 90 90
+		</Fill>
+		<Fill size="15">
+			EB 0D                    <!-- jmp $+15 -->
+			90 90 90 90 90 90 90 90  <!-- nop Fill -->
+			90 90 90 90 90
+		</Fill>
+	</CodeFill>
+
+	<!-- On newer processors, these are recommended -->
+	<CodeFill id="basic">
+		<Fill size="1">
+			90                       <!-- nop -->
+		</Fill>
+		<Fill size="2">
+			66 90                    <!-- xchg ax, ax (o16 nop) -->
+		</Fill>
+		<Fill size="3">
+			8D 76 00                 <!-- lea esi, [esi+byte 0] -->
+		</Fill>
+		<Fill size="4">
+			8D 74 26 00              <!-- lea esi, [esi*1+byte 0] -->
+		</Fill>
+		<Fill size="5">
+			90                       <!-- nop -->
+			8D 74 26 00              <!-- lea esi, [esi*1+byte 0] -->
+		</Fill>
+		<Fill size="6">
+			8D B6 00 00 00 00        <!-- lea esi, [esi+dword 0] -->
+		</Fill>
+		<Fill size="7">
+			8D B4 26 00 00 00 00     <!-- lea esi, [esi*1+dword 0] -->
+		</Fill>
+		<Fill size="8">
+			90                       <!-- nop -->
+			8D B4 26 00 00 00 00     <!-- lea esi, [esi*1+dword 0] -->
+		</Fill>
+		<Fill size="9">
+			EB 07                    <!-- jmp $+9 -->
+			90 90 90 90 90 90 90     <!-- nop Fill -->
+		</Fill>
+		<Fill size="10">
+			EB 08                    <!-- jmp $+10 -->
+			90 90 90 90 90 90 90 90  <!-- nop Fill -->
+		</Fill>
+		<Fill size="11">
+			EB 09                    <!-- jmp $+11 -->
+			90 90 90 90 90 90 90 90  <!-- nop Fill -->
+			90
+		</Fill>
+		<Fill size="12">
+			EB 0A                    <!-- jmp $+12 -->
+			90 90 90 90 90 90 90 90  <!-- nop Fill -->
+			90 90
+		</Fill>
+		<Fill size="13">
+			EB 0B                    <!-- jmp $+13 -->
+			90 90 90 90 90 90 90 90  <!-- nop Fill -->
+			90 90 90
+		</Fill>
+		<Fill size="14">
+			EB 0C                    <!-- jmp $+14 -->
+			90 90 90 90 90 90 90 90  <!-- nop Fill -->
+			90 90 90 90
+		</Fill>
+		<Fill size="15">
+			EB 0D                    <!-- jmp $+15 -->
+			90 90 90 90 90 90 90 90  <!-- nop Fill -->
+			90 90 90 90 90
+		</Fill>
+	</CodeFill>
+
+	<!-- GAS uses these -->
+	<CodeFill id="gasbasic">
+		<Fill size="1">
+			90                       <!-- nop -->
+		</Fill>
+		<Fill size="2">
+			66 90                    <!-- xchg ax, ax (o16 nop) -->
+		</Fill>
+		<Fill size="3">
+			8D 76 00                 <!-- lea esi, [esi+byte 0] -->
+		</Fill>
+		<Fill size="4">
+			8D 74 26 00              <!-- lea esi, [esi*1+byte 0] -->
+		</Fill>
+		<Fill size="5">
+			90                       <!-- nop -->
+			8D 74 26 00              <!-- lea esi, [esi*1+byte 0] -->
+		</Fill>
+		<Fill size="6">
+			8D B6 00 00 00 00        <!-- lea esi, [esi+dword 0] -->
+		</Fill>
+		<Fill size="7">
+			8D B4 26 00 00 00 00     <!-- lea esi, [esi*1+dword 0] -->
+		</Fill>
+		<Fill size="8">
+			90                       <!-- nop -->
+			8D B4 26 00 00 00 00     <!-- lea esi, [esi*1+dword 0] -->
+		</Fill>
+		<Fill size="9">
+			89 F6                    <!-- mov esi, esi -->
+			8D BC 27 00 00 00 00     <!-- lea edi, [edi*1+dword 0] -->
+		</Fill>
+		<Fill size="10">
+			8D 76 00                 <!-- lea esi, [esi+byte 0] -->
+			8D BC 27 00 00 00 00     <!-- lea edi, [edi+dword 0] -->
+		</Fill>
+		<Fill size="11">
+			8D 74 26 00              <!-- lea esi, [esi*1+byte 0] -->
+			8D BC 27 00 00 00 00     <!-- lea edi, [edi*1+dword 0] -->
+		</Fill>
+		<Fill size="12">
+			8D B6 00 00 00 00        <!-- lea esi, [esi+dword 0] -->
+			8D BF 00 00 00 00        <!-- lea edi, [edi+dword 0] -->
+		</Fill>
+		<Fill size="13">
+			8D B6 00 00 00 00        <!-- lea esi, [esi+dword 0] -->
+			8D BC 27 00 00 00 00     <!-- lea edi, [edi*1+dword 0] -->
+		</Fill>
+		<Fill size="14">
+			8D B4 26 00 00 00 00     <!-- lea esi, [esi*1+dword 0] -->
+			8D BC 27 00 00 00 00     <!-- lea edi, [edi*1+dword 0] -->
+		</Fill>
+		<Fill size="15">
+			EB 0D                    <!-- jmp $+15 -->
+			90 90 90 90 90 90 90 90  <!-- nop Fill -->
+			90 90 90 90 90
+		</Fill>
+	</CodeFill>
+
+	<CodeFill id="intel">
+		<Fill size="1">
+			90                       <!-- nop -->
+		</Fill>
+		<Fill size="2">
+			66 90                    <!-- xchg ax, ax (o16 nop) -->
+		</Fill>
+		<!-- Long form nops available on more recent Intel and AMD processors -->
+		<Fill size="3">
+			0F 1F 00                 <!-- nop(3) -->
+		</Fill>
+		<Fill size="4">
+			0F 1F 40 00              <!-- nop(4) -->
+		</Fill>
+		<Fill size="5">
+			0F 1F 44 00 00           <!-- nop(5) -->
+		</Fill>
+		<Fill size="6">
+			66                       <!-- o16 -->
+			0F 1F 44 00 00           <!-- nop(5) -->
+		</Fill>
+		<Fill size="7">
+			0F 1F 80 00 00 00 00     <!-- nop(7) -->
+		</Fill>
+		<Fill size="8">
+			0F 1F 84 00 00 00 00 00  <!-- nop(8) -->
+		</Fill>
+		<Fill size="9">
+			66                       <!-- o16 -->
+			0F 1F 84 00 00 00 00 00  <!-- nop(8) -->
+		</Fill>
+		<!-- Longer forms preferred by Intel use repeated o16 prefixes -->
+		<Fill size="10">
+			66 2E                    <!-- o16; cs -->
+			0F 1F 84 00 00 00 00 00  <!-- nop(8) -->
+		</Fill>
+		<Fill size="11">
+			66 66 2E                 <!-- 2x o16; cs -->
+			0F 1F 84 00 00 00 00 00  <!-- nop(8) -->
+		</Fill>
+		<Fill size="12">
+			66 66 66 2E              <!-- 3x o16; cs -->
+			0F 1F 84 00 00 00 00 00  <!-- nop(8) -->
+		</Fill>
+		<Fill size="13">
+			66 66 66 66 2E           <!-- 4x o16; cs -->
+			0F 1F 84 00 00 00 00 00  <!-- nop(8) -->
+		</Fill>
+		<Fill size="14">
+			66 66 66 66 66 2E        <!-- 5x o16; cs -->
+			0F 1F 84 00 00 00 00 00  <!-- nop(8) -->
+		</Fill>
+		<Fill size="15">
+			66 66 66 66 66 66 2E     <!-- 6x o16; cs -->
+			0F 1F 84 00 00 00 00 00  <!-- nop(8) -->
+		</Fill>
+	</CodeFill>
+
+	<CodeFill id="amd">
+		<Fill size="1">
+			90                       <!-- nop -->
+		</Fill>
+		<Fill size="2">
+			66 90                    <!-- xchg ax, ax (o16 nop) -->
+		</Fill>
+		<!-- Long form nops available on more recent Intel and AMD processors -->
+		<Fill size="3">
+			0F 1F 00                 <!-- nop(3) -->
+		</Fill>
+		<Fill size="4">
+			0F 1F 40 00              <!-- nop(4) -->
+		</Fill>
+		<Fill size="5">
+			0F 1F 44 00 00           <!-- nop(5) -->
+		</Fill>
+		<Fill size="6">
+			66                       <!-- o16 -->
+			0F 1F 44 00 00           <!-- nop(5) -->
+		</Fill>
+		<Fill size="7">
+			0F 1F 80 00 00 00 00     <!-- nop(7) -->
+		</Fill>
+		<Fill size="8">
+			0F 1F 84 00 00 00 00 00  <!-- nop(8) -->
+		</Fill>
+		<Fill size="9">
+			66                       <!-- o16 -->
+			0F 1F 84 00 00 00 00 00  <!-- nop(8) -->
+		</Fill>
+		<!-- Longer forms preferred by AMD use fewer o16 prefixes and no CS
+		prefix.  Source: Software Optimisation Guide for AMD Family 10h
+		Processors 40546 revision 3.10 February 2009 -->
+		<Fill size="10">
+			66 66                    <!-- 2x o16 -->
+			0F 1F 84 00 00 00 00 00  <!-- nop(8) -->
+		</Fill>
+		<Fill size="11">
+			0F 1F 44 00 00           <!-- nop(5) -->
+			66                       <!-- o16 -->
+			0F 1F 44 00 00           <!-- nop(5) -->
+		</Fill>
+		<Fill size="12">
+			66                       <!-- o16 -->
+			0F 1F 44 00 00           <!-- nop(5) -->
+			66                       <!-- o16 -->
+			0F 1F 44 00 00           <!-- nop(5) -->
+		</Fill>
+		<Fill size="13">
+			66                       <!-- o16 -->
+			0F 1F 44 00 00           <!-- nop(5) -->
+			0F 1F 80 00 00 00 00     <!-- nop(7) -->
+		</Fill>
+		<Fill size="14">
+			0F 1F 80 00 00 00 00     <!-- nop(7) -->
+			0F 1F 80 00 00 00 00     <!-- nop(7) -->
+		</Fill>
+		<Fill size="15">
+			0F 1F 80 00 00 00 00     <!-- nop(7) -->
+			0F 1F 84 00 00 00 00 00  <!-- nop(8) -->
+		</Fill>
+	</CodeFill>
+</Fills>
+
+<!-- vim: set ts=2 sw=2 sts=2 tw=78 noet: -->

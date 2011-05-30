@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Arch id="x86">
+	<Name>x86</Name>
+	<Description>x86 (IA-32 and derivatives), AMD64/Intel64</Description>
+
+	<xi:include href="x86fill.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+	<xi:include href="x86reg.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+	<xi:include href="x86isa.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+	<xi:include href="x86feature.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+	<xi:include href="x86cpu.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+
+</Arch>
+<!-- vim: set ts=2 sw=2 sts=2 tw=78 noet: -->

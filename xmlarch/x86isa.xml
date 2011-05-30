@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+<Isas>
+	<Isa id="16">
+		<Name>16</Name>
+		<Name>8086</Name>
+		<Name>x86_16</Name>
+		<Name>x86-16</Name>
+		<Description>Pre-386</Description>
+
+		<RegGroupRef idref="reg8"/>
+		<RegGroupRef idref="reg16"/>
+		<RegGroupRef idref="segreg16"/>
+
+		<FeatureRegMap>
+			<FromFeatures>
+				<FeatureRef idref="FPU"/>
+			</FromFeatures>
+			<ToReg>
+				<RegGroupRef idref="fpu"/>
+			</ToReg>
+		</FeatureRegMap>
+		<FeatureRegMap>
+			<FromFeatures>
+				<FeatureRef idref="MMX"/>
+				<FeatureRef idref="3DNow"/>
+			</FromFeatures>
+			<ToReg>
+				<RegGroupRef idref="mmx"/>
+			</ToReg>
+		</FeatureRegMap>
+		<FeatureRegMap>
+			<FromFeatures>
+				<FeatureRef idref="SSE"/>
+				<FeatureRef idref="SSE2"/>
+				<FeatureRef idref="SSE3"/>
+				<FeatureRef idref="SSSE3"/>
+				<FeatureRef idref="SSE41"/>
+				<FeatureRef idref="SSE42"/>
+				<FeatureRef idref="SSE4a"/>
+			</FromFeatures>
+			<ToReg>
+				<RegGroupRef idref="mmx"/>
+				<RegGroupRef idref="xmm"/>
+			</ToReg>
+		</FeatureRegMap>
+		<FeatureRegMap>
+			<FromFeatures>
+				<FeatureRef idref="AVX"/>
+				<FeatureRef idref="FMA"/>
+				<FeatureRef idref="AES"/>
+				<FeatureRef idref="CLMUL"/>
+				<FeatureRef idref="XOP"/>
+				<FeatureRef idref="FMA4"/>
+				<FeatureRef idref="F16C"/>
+				<FeatureRef idref="EPTVPID"/>
+			</FromFeatures>
+			<ToReg>
+				<RegGroupRef idref="mmx"/>
+				<RegGroupRef idref="xmm"/>
+				<RegGroupRef idref="ymm"/>
+			</ToReg>
+		</FeatureRegMap>
+
+		<CodeFillRef idref="16" default="true">
+			<Name>basic</Name>
+		</CodeFillRef>
+	</Isa>
+
+	<Isa id="x86">
+		<Name>x86</Name>
+		<Name>32</Name>
+		<Description>IA-32 and derivatives</Description>
+
+		<RegGroupRef idref="reg8"/>
+		<RegGroupRef idref="reg16"/>
+		<RegGroupRef idref="reg32"/>
+		<RegGroupRef idref="segreg32"/>
+
+		<FeatureRegMap>
+			<FromFeatures>
+				<FeatureRef idref="FPU"/>
+			</FromFeatures>
+			<ToReg>
+				<RegGroupRef idref="fpu"/>
+			</ToReg>
+		</FeatureRegMap>
+		<FeatureRegMap>
+			<FromFeatures>
+				<FeatureRef idref="MMX"/>
+				<FeatureRef idref="3DNow"/>
+			</FromFeatures>
+			<ToReg>
+				<RegGroupRef idref="mmx"/>
+			</ToReg>
+		</FeatureRegMap>
+		<FeatureRegMap>
+			<FromFeatures>
+				<FeatureRef idref="SSE"/>
+				<FeatureRef idref="SSE2"/>
+				<FeatureRef idref="SSE3"/>
+				<FeatureRef idref="SSSE3"/>
+				<FeatureRef idref="SSE41"/>
+				<FeatureRef idref="SSE42"/>
+				<FeatureRef idref="SSE4a"/>
+			</FromFeatures>
+			<ToReg>
+				<RegGroupRef idref="mmx"/>
+				<RegGroupRef idref="xmm"/>
+			</ToReg>
+		</FeatureRegMap>
+		<FeatureRegMap>
+			<FromFeatures>
+				<FeatureRef idref="AVX"/>
+				<FeatureRef idref="FMA"/>
+				<FeatureRef idref="AES"/>
+				<FeatureRef idref="CLMUL"/>
+				<FeatureRef idref="XOP"/>
+				<FeatureRef idref="FMA4"/>
+				<FeatureRef idref="F16C"/>
+				<FeatureRef idref="EPTVPID"/>
+			</FromFeatures>
+			<ToReg>
+				<RegGroupRef idref="mmx"/>
+				<RegGroupRef idref="xmm"/>
+				<RegGroupRef idref="ymm"/>
+			</ToReg>
+		</FeatureRegMap>
+
+		<CodeFillRef idref="basic" default="true">
+			<Name>basic</Name>
+		</CodeFillRef>
+		<CodeFillRef idref="gasbasic">
+			<Name>gas</Name>
+		</CodeFillRef>
+		<CodeFillRef idref="intel">
+			<Name>intel</Name>
+		</CodeFillRef>
+		<CodeFillRef idref="amd">
+			<Name>amd</Name>
+		</CodeFillRef>
+	</Isa>
+
+	<Isa id="amd64">
+		<Name>amd64</Name>
+		<Name>intel64</Name>
+		<Name>x86_64</Name>
+		<Name>x86-64</Name>
+		<Name>64</Name>
+		<Description>AMD64/Intel64</Description>
+
+		<RegGroupRef idref="reg8x"/>
+		<RegGroupRef idref="reg16x"/>
+		<RegGroupRef idref="reg32x"/>
+		<RegGroupRef idref="reg64"/>
+		<RegGroupRef idref="segreg32"/>
+		<RegisterRef idref="rip"/>
+
+		<FeatureRegMap>
+			<FromFeatures>
+				<FeatureRef idref="FPU"/>
+			</FromFeatures>
+			<ToReg>
+				<RegGroupRef idref="fpu"/>
+			</ToReg>
+		</FeatureRegMap>
+		<FeatureRegMap>
+			<FromFeatures>
+				<FeatureRef idref="MMX"/>
+				<FeatureRef idref="3DNow"/>
+			</FromFeatures>
+			<ToReg>
+				<RegGroupRef idref="mmx"/>
+			</ToReg>
+		</FeatureRegMap>
+		<FeatureRegMap>
+			<FromFeatures>
+				<FeatureRef idref="SSE"/>
+				<FeatureRef idref="SSE2"/>
+				<FeatureRef idref="SSE3"/>
+				<FeatureRef idref="SSSE3"/>
+				<FeatureRef idref="SSE41"/>
+				<FeatureRef idref="SSE42"/>
+				<FeatureRef idref="SSE4a"/>
+			</FromFeatures>
+			<ToReg>
+				<RegGroupRef idref="mmx"/>
+				<RegGroupRef idref="xmm64"/>
+			</ToReg>
+		</FeatureRegMap>
+		<FeatureRegMap>
+			<FromFeatures>
+				<FeatureRef idref="AVX"/>
+				<FeatureRef idref="FMA"/>
+				<FeatureRef idref="AES"/>
+				<FeatureRef idref="CLMUL"/>
+				<FeatureRef idref="XOP"/>
+				<FeatureRef idref="FMA4"/>
+				<FeatureRef idref="F16C"/>
+				<FeatureRef idref="EPTVPID"/>
+			</FromFeatures>
+			<ToReg>
+				<RegGroupRef idref="mmx"/>
+				<RegGroupRef idref="xmm64"/>
+				<RegGroupRef idref="ymm64"/>
+			</ToReg>
+		</FeatureRegMap>
+
+		<!-- Default to Intel ones if unspecified (to match GAS behavior). -->
+		<CodeFillRef idref="intel" default="true">
+			<Name>basic</Name>
+			<Name>intel</Name>
+		</CodeFillRef>
+		<CodeFillRef idref="amd">
+			<Name>amd</Name>
+		</CodeFillRef>
+	</Isa>
+</Isas>
+<!-- vim: set ts=2 sw=2 sts=2 tw=78 noet: -->
