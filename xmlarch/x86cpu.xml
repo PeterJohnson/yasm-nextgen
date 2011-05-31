@@ -29,7 +29,7 @@
 		<Name>80386</Name>
 		<Name>i386</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
+		<IsaRef idref="32"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="386"/>
@@ -42,7 +42,7 @@
 		<Name>80486</Name>
 		<Name>i486</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
+		<IsaRef idref="32"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="386"/>
@@ -58,7 +58,7 @@
 		<Name>pentium</Name>
 		<Name>p5</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
+		<IsaRef idref="32"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="386"/>
@@ -76,7 +76,7 @@
 		<Name>ppro</Name>
 		<Name>pentiumpro</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
+		<IsaRef idref="32"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="386"/>
@@ -95,7 +95,7 @@
 		<Name>ppro</Name>
 		<Name>pentiumpro</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
+		<IsaRef idref="32"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="386"/>
@@ -114,7 +114,7 @@
 		<Name>pentiumii</Name>
 		<Name>pentium-ii</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
+		<IsaRef idref="32"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="386"/>
@@ -135,7 +135,7 @@
 		<Name>pentium-iii</Name>
 		<Name>katmai</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
+		<IsaRef idref="32"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="386"/>
@@ -158,7 +158,7 @@
 		<Name>pentium-iv</Name>
 		<Name>williamette</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
+		<IsaRef idref="32"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="386"/>
@@ -180,7 +180,7 @@
 		<Name>ia-64</Name>
 		<Name>itanium</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
+		<IsaRef idref="32"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="386"/>
@@ -201,7 +201,7 @@
 	<Cpu id="Prescott">
 		<Name>prescott</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
+		<IsaRef idref="32"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="386"/>
@@ -224,8 +224,8 @@
 		<Name>conroe</Name>
 		<Name>core2</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
-		<IsaRef idref="amd64"/>
+		<IsaRef idref="32"/>
+		<IsaRef idref="64"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="386"/>
@@ -248,8 +248,8 @@
 	<Cpu id="Penryn">
 		<Name>penryn</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
-		<IsaRef idref="amd64"/>
+		<IsaRef idref="32"/>
+		<IsaRef idref="64"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="386"/>
@@ -274,8 +274,8 @@
 		<Name>nehalem</Name>
 		<Name>corei7</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
-		<IsaRef idref="amd64"/>
+		<IsaRef idref="32"/>
+		<IsaRef idref="64"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="386"/>
@@ -301,8 +301,8 @@
 	<Cpu id="Westmere">
 		<Name>westmere</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
-		<IsaRef idref="amd64"/>
+		<IsaRef idref="32"/>
+		<IsaRef idref="64"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="386"/>
@@ -330,8 +330,8 @@
 	<Cpu id="Sandybridge">
 		<Name>sandybridge</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
-		<IsaRef idref="amd64"/>
+		<IsaRef idref="32"/>
+		<IsaRef idref="64"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="386"/>
@@ -362,7 +362,7 @@
 	<Cpu id="K6">
 		<Name>k6</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
+		<IsaRef idref="32"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="386"/>
@@ -381,7 +381,7 @@
 		<Name>k7</Name>
 		<Name>athlon</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
+		<IsaRef idref="32"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="386"/>
@@ -406,8 +406,8 @@
 		<Name>athlon64</Name>
 		<Name>athlon-64</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
-		<IsaRef idref="amd64"/>
+		<IsaRef idref="32"/>
+		<IsaRef idref="64"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="386"/>
@@ -429,8 +429,8 @@
 	<Cpu id="Venice">
 		<Name>venice</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
-		<IsaRef idref="amd64"/>
+		<IsaRef idref="32"/>
+		<IsaRef idref="64"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="386"/>
@@ -455,8 +455,8 @@
 		<Name>phenom</Name>
 		<Name>family10h</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
-		<IsaRef idref="amd64"/>
+		<IsaRef idref="32"/>
+		<IsaRef idref="64"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="386"/>
@@ -480,8 +480,8 @@
 	<Cpu id="Bulldozer">
 		<Name>bulldozer</Name>
 		<IsaRef idref="16"/>
-		<IsaRef idref="x86"/>
-		<IsaRef idref="amd64"/>
+		<IsaRef idref="32"/>
+		<IsaRef idref="64"/>
 		<FeatureRef idref="186"/>
 		<FeatureRef idref="286"/>
 		<FeatureRef idref="386"/>
