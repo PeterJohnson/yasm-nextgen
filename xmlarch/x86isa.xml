@@ -75,6 +75,9 @@
 		<RegGroupRef idref="reg16"/>
 		<RegGroupRef idref="reg32"/>
 		<RegGroupRef idref="segreg32"/>
+		<RegGroupRef idref="cr"/>
+		<RegGroupRef idref="dr"/>
+		<RegGroupRef idref="tr"/>
 
 		<FeatureRegMap>
 			<FromFeatures>
@@ -153,6 +156,9 @@
 		<RegGroupRef idref="reg32x"/>
 		<RegGroupRef idref="reg64"/>
 		<RegGroupRef idref="segreg32"/>
+		<RegGroupRef idref="cr64"/>
+		<RegGroupRef idref="dr"/>
+		<RegGroupRef idref="tr"/>
 		<RegisterRef idref="rip"/>
 
 		<FeatureRegMap>

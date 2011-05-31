@@ -1,6 +1,63 @@
 <?xml version="1.0"?>
 <Registers>
-	<!-- traditional floating point Registers -->
+	<!-- control registers -->
+	<RegGroup id="cr">
+		<Register id="cr0" size="32" value="0"><Name>cr0</Name></Register>
+		<Register id="cr2" size="32" value="2"><Name>cr2</Name></Register>
+		<Register id="cr3" size="32" value="3"><Name>cr3</Name></Register>
+		<Register id="cr4" size="32" value="4"><Name>cr4</Name></Register>
+	</RegGroup>
+
+	<RegGroup id="cr64">
+		<RegisterRef idref="cr0"/>
+		<RegisterRef idref="cr2"/>
+		<RegisterRef idref="cr3"/>
+		<RegisterRef idref="cr4"/>
+		<Register id="cr8" size="32" value="8"><Name>cr8</Name></Register>
+	</RegGroup>
+
+	<!-- debug registers -->
+	<RegGroup id="dr">
+		<Register id="dr0" size="32" value="0"><Name>dr0</Name></Register>
+		<Register id="dr1" size="32" value="1"><Name>dr1</Name></Register>
+		<Register id="dr2" size="32" value="2"><Name>dr2</Name></Register>
+		<Register id="dr3" size="32" value="3"><Name>dr3</Name></Register>
+		<Register id="dr4" size="32" value="4"><Name>dr4</Name></Register>
+		<Register id="dr5" size="32" value="5"><Name>dr5</Name></Register>
+		<Register id="dr6" size="32" value="6"><Name>dr6</Name></Register>
+		<Register id="dr7" size="32" value="7"><Name>dr7</Name></Register>
+	</RegGroup>
+
+	<!-- test registers -->
+	<RegGroup id="tr">
+		<Register id="tr0" size="32" value="0"><Name>tr0</Name></Register>
+		<Register id="tr1" size="32" value="1"><Name>tr1</Name></Register>
+		<Register id="tr2" size="32" value="2"><Name>tr2</Name></Register>
+		<Register id="tr3" size="32" value="3"><Name>tr3</Name></Register>
+		<Register id="tr4" size="32" value="4"><Name>tr4</Name></Register>
+		<Register id="tr5" size="32" value="5"><Name>tr5</Name></Register>
+		<Register id="tr6" size="32" value="6"><Name>tr6</Name></Register>
+		<Register id="tr7" size="32" value="7"><Name>tr7</Name></Register>
+	</RegGroup>
+
+	<!-- segment registers -->
+	<RegGroup id="segreg16">
+		<Register id="es" size="16" value="0"><Name>es</Name></Register>
+		<Register id="cs" size="16" value="1"><Name>cs</Name></Register>
+		<Register id="ss" size="16" value="2"><Name>ss</Name></Register>
+		<Register id="ds" size="16" value="3"><Name>ds</Name></Register>
+	</RegGroup>
+
+	<RegGroup id="segreg32">
+		<RegisterRef idref="es"/>
+		<RegisterRef idref="cs"/>
+		<RegisterRef idref="ss"/>
+		<RegisterRef idref="ds"/>
+		<Register id="fs" size="16" value="4"><Name>fs</Name></Register>
+		<Register id="gs" size="16" value="5"><Name>gs</Name></Register>
+	</RegGroup>
+
+	<!-- traditional floating point registers -->
 	<RegGroup id="fpu">
 		<Name>st</Name>
 		<Register id="st0" size="80" value="0"><Name>st0</Name></Register>
