@@ -97,14 +97,6 @@
 	</RegGroup>
 	<RegGroup id="xmm64">
 		<Name>xmm</Name>
-		<RegisterRef idref="xmm0"/>
-		<RegisterRef idref="xmm1"/>
-		<RegisterRef idref="xmm2"/>
-		<RegisterRef idref="xmm3"/>
-		<RegisterRef idref="xmm4"/>
-		<RegisterRef idref="xmm5"/>
-		<RegisterRef idref="xmm6"/>
-		<RegisterRef idref="xmm7"/>
 		<Register id="xmm8" size="128" value="8"><Name>xmm8</Name></Register>
 		<Register id="xmm9" size="128" value="9"><Name>xmm9</Name></Register>
 		<Register id="xmm10" size="128" value="10"><Name>xmm10</Name></Register>
@@ -129,14 +121,6 @@
 	</RegGroup>
 	<RegGroup id="ymm64">
 		<Name>ymm</Name>
-		<RegisterRef idref="ymm0"/>
-		<RegisterRef idref="ymm1"/>
-		<RegisterRef idref="ymm2"/>
-		<RegisterRef idref="ymm3"/>
-		<RegisterRef idref="ymm4"/>
-		<RegisterRef idref="ymm5"/>
-		<RegisterRef idref="ymm6"/>
-		<RegisterRef idref="ymm7"/>
 		<Register id="ymm8" size="256" value="8"><Name>ymm8</Name></Register>
 		<Register id="ymm9" size="256" value="9"><Name>ymm9</Name></Register>
 		<Register id="ymm10" size="256" value="10"><Name>ymm10</Name></Register>
@@ -185,10 +169,6 @@
 
 	<!-- extended 8-bit integer Registers -->
 	<RegGroup id="reg8x">
-		<RegisterRef idref="al"/>
-		<RegisterRef idref="cl"/>
-		<RegisterRef idref="dl"/>
-		<RegisterRef idref="bl"/>
 		<Register id="spl" size="8" value="4"><Name>spl</Name></Register>
 		<Register id="bpl" size="8" value="5"><Name>bpl</Name></Register>
 		<Register id="sil" size="8" value="6"><Name>sil</Name></Register>
@@ -205,14 +185,6 @@
 
 	<!-- extended 16-bit integer Registers -->
 	<RegGroup id="reg16x">
-		<RegisterRef idref="ax"/>
-		<RegisterRef idref="cx"/>
-		<RegisterRef idref="dx"/>
-		<RegisterRef idref="bx"/>
-		<RegisterRef idref="sp"/>
-		<RegisterRef idref="bp"/>
-		<RegisterRef idref="si"/>
-		<RegisterRef idref="di"/>
 		<Register id="r8w" size="16" value="8"><Name>r8w</Name></Register>
 		<Register id="r9w" size="16" value="9"><Name>r9w</Name></Register>
 		<Register id="r10w" size="16" value="10"><Name>r10w</Name></Register>
@@ -225,14 +197,6 @@
 
 	<!-- extended 32-bit integer Registers -->
 	<RegGroup id="reg32x">
-		<RegisterRef idref="eax"/>
-		<RegisterRef idref="ecx"/>
-		<RegisterRef idref="edx"/>
-		<RegisterRef idref="ebx"/>
-		<RegisterRef idref="esp"/>
-		<RegisterRef idref="ebp"/>
-		<RegisterRef idref="esi"/>
-		<RegisterRef idref="edi"/>
 		<Register id="r8d" size="32" value="8"><Name>r8d</Name></Register>
 		<Register id="r9d" size="32" value="9"><Name>r9d</Name></Register>
 		<Register id="r10d" size="32" value="10"><Name>r10d</Name></Register>
