@@ -151,11 +151,8 @@
 		<Name>64</Name>
 		<Description>AMD64/Intel64</Description>
 
-		<RegGroupRef idref="reg8"/>
 		<RegGroupRef idref="reg8x"/>
-		<RegGroupRef idref="reg16"/>
 		<RegGroupRef idref="reg16x"/>
-		<RegGroupRef idref="reg32"/>
 		<RegGroupRef idref="reg32x"/>
 		<RegGroupRef idref="reg64"/>
 		<RegGroupRef idref="segreg32"/>
@@ -193,7 +190,6 @@
 			</FromFeatures>
 			<ToReg>
 				<RegGroupRef idref="mmx"/>
-				<RegGroupRef idref="xmm"/>
 				<RegGroupRef idref="xmm64"/>
 			</ToReg>
 		</FeatureRegMap>
@@ -210,9 +206,7 @@
 			</FromFeatures>
 			<ToReg>
 				<RegGroupRef idref="mmx"/>
-				<RegGroupRef idref="xmm"/>
 				<RegGroupRef idref="xmm64"/>
-				<RegGroupRef idref="ymm"/>
 				<RegGroupRef idref="ymm64"/>
 			</ToReg>
 		</FeatureRegMap>
