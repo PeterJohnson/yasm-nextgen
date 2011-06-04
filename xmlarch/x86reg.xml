@@ -262,6 +262,8 @@
 		<Register id="r14" size="64" value="14"><Name>r14</Name></Register>
 		<Register id="r15" size="64" value="15"><Name>r15</Name></Register>
 	</RegGroup>
+
+	<Register id="rip" size="64" value="0"><Name>rip</Name></Register>
 </Registers>
 
 <!-- vim: set ts=2 sw=2 sts=2 tw=78 noet: -->

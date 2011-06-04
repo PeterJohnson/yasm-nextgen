@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<Formats>
+	<Field id="segprefix" size="8" shift="0">
+		<FieldMatch>
+			<RegisterRef idref="es"/>
+			<FieldValue>0x26</FieldValue>
+		</FieldMatch>
+		<FieldMatch>
+			<RegisterRef idref="cs"/>
+			<FieldValue>0x2e</FieldValue>
+		</FieldMatch>
+		<FieldMatch>
+			<RegisterRef idref="ss"/>
+			<FieldValue>0x36</FieldValue>
+		</FieldMatch>
+		<FieldMatch>
+			<RegisterRef idref="ds"/>
+			<FieldValue>0x3e</FieldValue>
+		</FieldMatch>
+		<FieldMatch>
+			<RegisterRef idref="fs"/>
+			<FieldValue>0x64</FieldValue>
+		</FieldMatch>
+		<FieldMatch>
+			<RegisterRef idref="gs"/>
+			<FieldValue>0x65</FieldValue>
+		</FieldMatch>
+	</Field>
+
+	<Format id="basic16" type="bytesequence">
+		<Byte optional="true"><FieldRef idref="segprefix"/></Byte>
+		<Byte optional="true">
+			<Field id="addrsize" size="8" shift="0">
+				<FieldMatch>
+					<Number>32</Number>
+					<FieldValue>0x67</FieldValue>
+				</FieldMatch>
+				<FieldMatch>
+					<Number>16</Number>
+				</FieldMatch>
+			</Field>
+		</Byte>
+		<Byte optional="true">
+			<Field id="opersize" size="8" shift="0">
+				<FieldMatch>
+					<Number>32</Number>
+					<FieldValue>0x66</FieldValue>
+				</FieldMatch>
+				<FieldMatch>
+					<Number>16</Number>
+				</FieldMatch>
+			</Field>
+		</Byte>
+		<!--<Field id="lockrep" optional="true"></Field>-->
+		<Bytes><Field id="opcode"/></Bytes>
+		<Byte optional="true">
+			<Field id="modrm.mod" size="2" shift="6" special="modrm16_mod()"/>
+			<Field id="modrm.reg" size="3" shift="3" special="modrm16_reg()"/>
+			<Field id="modrm.rm" size="3" shift="0" special="modrm16_rm()"/>
+		</Byte>
+	</Format>
+
+	<Format id="basic32" type="bytesequence">
+		<Byte optional="true"><FieldRef idref="segprefix"/></Byte>
+		<Byte optional="true">
+			<Field id="addrsize" size="8" shift="0">
+				<FieldMatch>
+					<Number>16</Number>
+					<FieldValue>0x67</FieldValue>
+				</FieldMatch>
+				<FieldMatch>
+					<Number>32</Number>
+				</FieldMatch>
+			</Field>
+		</Byte>
+		<Byte optional="true">
+			<Field id="opersize" size="8" shift="0">
+				<FieldMatch>
+					<Number>16</Number>
+					<FieldValue>0x66</FieldValue>
+				</FieldMatch>
+				<FieldMatch>
+					<Number>32</Number>
+				</FieldMatch>
+			</Field>
+		</Byte>
+		<!--<Field id="lockrep" optional="true"></Field>-->
+		<Bytes><Field id="opcode"/></Bytes>
+		<Byte optional="true">
+			<Field id="modrm.mod" size="2" shift="6" special="modrm32_mod()"/>
+			<Field id="modrm.reg" size="3" shift="3" special="modrm32_reg()"/>
+			<Field id="modrm.rm" size="3" shift="0" special="modrm32_rm()"/>
+		</Byte>
+		<Byte optional="true">
+			<Field id="sib" size="8" shift="0" special="sib32()"/>
+		</Byte>
+	</Format>
+
+	<Format id="basic64" type="bytesequence">
+		<Byte optional="true"><FieldRef idref="segprefix"/></Byte>
+		<Byte optional="true">
+			<Field id="addrsize" size="8" shift="0">
+				<FieldMatch>
+					<Number>32</Number>
+					<FieldValue>0x67</FieldValue>
+				</FieldMatch>
+				<FieldMatch>
+					<Number>64</Number>
+				</FieldMatch>
+			</Field>
+		</Byte>
+		<Byte optional="true">
+			<Field id="opersize" size="8" shift="0" special="opersize64()"/>
+		</Byte>
+		<!--<Field id="lockrep" optional="true"></Field>-->
+		<Byte optional="true">
+			<Field id="rex" size="4" shift="4">
+				<FieldMatch>
+					<Number>1</Number>
+					<FieldValue>0x4</FieldValue>
+				</FieldMatch>
+			</Field>
+			<Field id="rex.w" size="1" shift="3" special="rex_w()"/>
+			<Field id="rex.r" size="1" shift="2" special="rex_r()"/>
+			<Field id="rex.x" size="1" shift="1" special="rex_x()"/>
+			<Field id="rex.b" size="1" shift="0" special="rex_b()"/>
+		</Byte>
+		<Bytes><Field id="opcode"/></Bytes>
+		<Byte optional="true">
+			<Field id="modrm.mod" size="2" shift="6" special="modrm64_mod()"/>
+			<Field id="modrm.reg" size="3" shift="3" special="modrm64_reg()"/>
+			<Field id="modrm.rm" size="3" shift="0" special="modrm64_rm()"/>
+		</Byte>
+		<Byte optional="true">
+			<Field id="sib" size="8" shift="0" special="sib64()"/>
+		</Byte>
+	</Format>
+
+	<!--
+	<Format id="vex3">
+		<Bytes>C4</Bytes>
+		<Value size="1">
+			<Bitfield size="5" shift="0">
+				<Field id="vex_mmmmm">
+				</Field>
+			</Bitfield>
+		</Value>
+	</Format>
+
+	<Format id="vex2">
+		<Bytes>C5</Bytes>
+	</Format>
+	-->
+</Formats>
+
+<!-- vim: set ts=2 sw=2 sts=2 tw=78 noet: -->

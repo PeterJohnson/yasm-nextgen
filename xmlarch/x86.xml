@@ -8,6 +8,8 @@
 	<xi:include href="x86isa.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
 	<xi:include href="x86feature.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
 	<xi:include href="x86cpu.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+	<xi:include href="x86formats.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+	<xi:include href="x86insns.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
 
 </Arch>
 <!-- vim: set ts=2 sw=2 sts=2 tw=78 noet: -->

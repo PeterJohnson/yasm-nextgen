@@ -4,7 +4,7 @@ arch = element Arch {
 	attribute id { text },
 	nm+,
 	descr,
-	(fills & registers & isas & features & cpus)
+	(fills & registers & isas & features & cpus & formats & insns)
 	}
 
 # Code fill
@@ -42,16 +42,20 @@ isa = element Isa {
 	attribute id { text },
 	nm+,
 	descr,
-	(regref|reggroupref|codefillref|featureregmap)+
+	(regref|codefillref|formatref|featuremap)+
 	}
 codefillref = element CodeFillRef {
 	attribute idref { text },
 	attribute default { "true" }?,
 	nm+
 	}
-featureregmap = element FeatureRegMap {
+formatref = element FormatRef {
+	attribute idref { text },
+	attribute default { "true" }?
+	}
+featuremap = element FeatureMap {
 	element FromFeatures { featureref+ },
-	element ToReg { (regref|reggroupref)+ }
+	element ToReg { regref+ }
 	}
 
 # CPU feature
@@ -60,7 +64,7 @@ feature = element Feature {
 	attribute id { text }?,
 	nm*,
 	descr,
-	(regref|reggroupref|featureref)*
+	(regref|featureref)*
 	}
 
 # CPU
@@ -73,11 +77,67 @@ cpu = element Cpu {
 	featureref*
 	}
 
+# Formats
+formats = element Formats { (format|field)+ }
+format = element Format {
+	attribute id { text },
+	attribute type { "bytesequence" },
+	(byte|bytes)+
+	}
+byte = element Byte {
+	attribute optional { "true" }?,
+	(field|fieldref)+
+	}
+bytes = element Bytes {
+	attribute optional { "true" }?,
+	(field|fieldref)+
+	}
+field = element Field {
+	attribute id { text },
+	attribute size { xsd:int }?,
+	attribute shift { xsd:int }?,
+	attribute special { text }?,
+	fieldmatch*
+	}
+fieldmatch = element FieldMatch {
+	(regref|number)+,
+	fieldvalue?
+	}
+fieldvalue = element FieldValue { text }
+number = element Number { text }
+
+# Instructions
+insns = element Insns { table+ }
+table = element Table {
+	attribute id { text },
+	row+
+	}
+row = element Row {
+	constraints?,
+	(match|tableref)+
+	}
+constraints = element Constraints {
+	(isaref|featureref|not)+
+	}
+not = element Not { isaref|featureref }
+match = element Match {
+	(identifier|regref|setfield)+
+	}
+identifier = element Identifier {
+	attribute syntax { text }?,
+	text
+	}
+setfield = element SetField {
+	attribute idref { text },
+	text?
+	}
+
 # Reference elements
 isaref = element IsaRef { attribute idref { text } }
 regref = element RegisterRef { attribute idref { text } }
-reggroupref = element RegGroupRef { attribute idref { text } }
 featureref = element FeatureRef { attribute idref { text } }
+tableref = element TableRef { attribute idref { text } }
+fieldref = element FieldRef { attribute idref { text } }
 
 # Common elements
 nm = element Name { text }
