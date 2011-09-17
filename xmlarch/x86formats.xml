@@ -52,7 +52,10 @@
 			</Field>
 		</Byte>
 		<!--<Field id="lockrep" optional="true"></Field>-->
-		<Bytes><Field id="opcode"/></Bytes>
+		<Bytes>
+			<Field id="opcode"/>
+			<Field id="opcode.0.4" offset="0" size="4" shift="0" overwrite="true"/>
+		</Bytes>
 		<Byte optional="true">
 			<Field id="modrm.mod" size="2" shift="6" special="modrm16_mod()"/>
 			<Field id="modrm.reg" size="3" shift="3" special="modrm16_reg()"/>
@@ -85,7 +88,10 @@
 			</Field>
 		</Byte>
 		<!--<Field id="lockrep" optional="true"></Field>-->
-		<Bytes><Field id="opcode"/></Bytes>
+		<Bytes>
+			<Field id="opcode"/>
+			<Field id="opcode.0.4" offset="0" size="4" shift="0" overwrite="true"/>
+		</Bytes>
 		<Byte optional="true">
 			<Field id="modrm.mod" size="2" shift="6" special="modrm32_mod()"/>
 			<Field id="modrm.reg" size="3" shift="3" special="modrm32_reg()"/>
@@ -125,7 +131,10 @@
 			<Field id="rex.x" size="1" shift="1" special="rex_x()"/>
 			<Field id="rex.b" size="1" shift="0" special="rex_b()"/>
 		</Byte>
-		<Bytes><Field id="opcode"/></Bytes>
+		<Bytes>
+			<Field id="opcode"/>
+			<Field id="opcode.0.4" offset="0" size="4" shift="0" overwrite="true"/>
+		</Bytes>
 		<Byte optional="true">
 			<Field id="modrm.mod" size="2" shift="6" special="modrm64_mod()"/>
 			<Field id="modrm.reg" size="3" shift="3" special="modrm64_reg()"/>

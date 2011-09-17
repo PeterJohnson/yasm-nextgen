@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<Insns>
+	<!-- cmpps -->
+	<Insn id="CMPPSrri">
+		<FeatureRef idref="SSE"/>
+		<SetField field="opcode" value="0x0F,0xC2"/>
+		<SetField field="modrm.mod" value="3"/>
+		<RegOperand group="xmm" field="modrm.reg" out="dst"/>
+		<RegOperand group="xmm" field="modrm.rm" in="src1"/>
+		<ImmOperand size="8" field="imm8" in="cc"/>
+		<Syntax mode="intel">cmpps $dst, $src1, $cc</Syntax>
+		<Syntax mode="att">cmpps $cc, $src1, $dst</Syntax>
+	</Insn>
+	<Insn id="CMPPSrmi">
+		<FeatureRef idref="SSE"/>
+		<SetField field="opcode" value="0x0F,0xC2"/>
+		<RegOperand group="xmm" field="modrm.reg" out="dst"/>
+		<MemOperand size="128" field="ea" in="src1"/>
+		<ImmOperand size="8" field="imm8" in="cc"/>
+		<Syntax mode="intel">cmpps $dst, $src1, $cc</Syntax>
+		<Syntax mode="att">cmpps $cc, $src1, $dst</Syntax>
+	</Insn>
+	<!-- cmpeqps -->
+	<Insn id="CMPEQPSrr">
+		<FeatureRef idref="SSE"/>
+		<SetField field="opcode" value="0x0F,0xC2"/>
+		<SetField field="modrm.mod" value="3"/>
+		<RegOperand group="xmm" field="modrm.reg" out="dst"/>
+		<RegOperand group="xmm" field="modrm.rm" in="src1"/>
+		<SetField field="imm8" value="0"/>
+		<Syntax mode="intel">cmpeqps $dst, $src1</Syntax>
+		<Syntax mode="att">cmpeqps $src1, $dst</Syntax>
+	</Insn>
+	<Insn id="CMPEQPSrm">
+		<FeatureRef idref="SSE"/>
+		<SetField field="opcode" value="0x0F,0xC2"/>
+		<RegOperand group="xmm" field="modrm.reg" out="dst"/>
+		<MemOperand size="128" field="ea" in="src1"/>
+		<SetField field="imm8" value="0"/>
+		<Syntax mode="intel">cmpeqps $dst, $src1</Syntax>
+		<Syntax mode="att">cmpeqps $src1, $dst</Syntax>
+	</Insn>
+	<!-- inc -->
+	<Insn id="INC16r" formats="basic16,basic32">
+		<SetField field="opcode" value="0x40"/>
+		<SetField field="opersize" value="16"/>
+		<RegOperand group="reg16" field="opcode.0.4" out="dst" in="src1"/>
+		<Syntax mode="intel">inc $dst</Syntax>
+		<Syntax mode="att">inc{w} $dst</Syntax>
+	</Insn>
+	<Insn id="INC32r" formats="basic16,basic32">
+		<SetField field="opcode" value="0x40"/>
+		<SetField field="opersize" value="32"/>
+		<RegOperand group="reg32" field="opcode.0.4" out="dst" in="src1"/>
+		<Syntax mode="intel">inc $dst</Syntax>
+		<Syntax mode="att">inc{l} $dst</Syntax>
+	</Insn>
+	<Insn id="INC8r">
+		<SetField field="opcode" value="0xFE"/>
+		<SetField field="modrm.mod" value="3"/>
+		<SetField field="modrm.reg" value="0"/>
+		<RegOperand group="reg8" field="modrm.rm" out="dst" in="src1"/>
+		<Syntax mode="intel">inc $dst</Syntax>
+		<Syntax mode="att">inc{b} $dst</Syntax>
+	</Insn>
+	<Insn id="INC64_16r">
+		<SetField field="opcode" value="0xFF"/>
+		<SetField field="opersize" value="16"/>
+		<SetField field="modrm.mod" value="3"/>
+		<SetField field="modrm.reg" value="0"/>
+		<RegOperand group="reg16" field="modrm.rm" out="dst" in="src1"/>
+		<Syntax mode="intel">inc $dst</Syntax>
+		<Syntax mode="att">inc{w} $dst</Syntax>
+	</Insn>
+	<Insn id="INC64_32r">
+		<SetField field="opcode" value="0xFF"/>
+		<SetField field="opersize" value="32"/>
+		<SetField field="modrm.mod" value="3"/>
+		<SetField field="modrm.reg" value="0"/>
+		<RegOperand group="reg32" field="modrm.rm" out="dst" in="src1"/>
+		<Syntax mode="intel">inc $dst</Syntax>
+		<Syntax mode="att">inc{l} $dst</Syntax>
+	</Insn>
+	<Insn id="INC64r">
+		<SetField field="opcode" value="0xFF"/>
+		<SetField field="opersize" value="64"/>
+		<SetField field="modrm.mod" value="3"/>
+		<SetField field="modrm.reg" value="0"/>
+		<RegOperand group="reg32" field="modrm.rm" out="dst" in="src1"/>
+		<Syntax mode="intel">inc $dst</Syntax>
+		<Syntax mode="att">inc{q} $dst</Syntax>
+	</Insn>
+</Insns>
+
+<!-- vim: set ts=2 sw=2 sts=2 tw=78 noet: -->

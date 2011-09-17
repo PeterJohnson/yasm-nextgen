@@ -94,9 +94,11 @@ bytes = element Bytes {
 	}
 field = element Field {
 	attribute id { text },
+	attribute offset { xsd:int }?,
 	attribute size { xsd:int }?,
 	attribute shift { xsd:int }?,
 	attribute special { text }?,
+	attribute overwrite { "true" }?,
 	fieldmatch*
 	}
 fieldmatch = element FieldMatch {
@@ -107,29 +109,40 @@ fieldvalue = element FieldValue { text }
 number = element Number { text }
 
 # Instructions
-insns = element Insns { table+ }
-table = element Table {
+insns = element Insns { insn+ }
+insn = element Insn {
 	attribute id { text },
-	row+
-	}
-row = element Row {
-	constraints?,
-	(match|tableref)+
-	}
-constraints = element Constraints {
-	(isaref|featureref|not)+
-	}
-not = element Not { isaref|featureref }
-match = element Match {
-	(identifier|regref|setfield)+
-	}
-identifier = element Identifier {
-	attribute syntax { text }?,
-	text
+	attribute formats { text }?,
+	(isaref|featureref|setfield|regoperand|memoperand|immoperand|syntax|constraint)+
 	}
 setfield = element SetField {
-	attribute idref { text },
-	text?
+	attribute field { text },
+	attribute value { text }
+	}
+regoperand = element RegOperand {
+	attribute group { text }?,
+	attribute name { text }?,
+	attribute field { text }?,
+	attribute out { text }?,
+	attribute in { text }?
+	}
+memoperand = element MemOperand {
+	attribute size { xsd:int }?,
+	attribute field { text }?,
+	attribute out { text }?,
+	attribute in { text }?
+	}
+immoperand = element ImmOperand {
+	attribute size { xsd:int }?,
+	attribute field { text }?,
+	attribute in { text }
+	}
+syntax = element Syntax {
+	attribute mode { text },
+	text
+	}
+constraint = element Constraint {
+	text
 	}
 
 # Reference elements
