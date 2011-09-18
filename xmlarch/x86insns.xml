@@ -44,14 +44,14 @@
 	<Insn id="INC16r" formats="basic16,basic32">
 		<SetField field="opcode" value="0x40"/>
 		<SetField field="opersize" value="16"/>
-		<RegOperand group="reg16" field="opcode.0.4" out="dst" in="src1"/>
+		<RegOperand group="reg16" field="opcode.0.3" out="dst" in="src1"/>
 		<Syntax mode="intel">inc $dst</Syntax>
 		<Syntax mode="att">inc{w} $dst</Syntax>
 	</Insn>
 	<Insn id="INC32r" formats="basic16,basic32">
 		<SetField field="opcode" value="0x40"/>
 		<SetField field="opersize" value="32"/>
-		<RegOperand group="reg32" field="opcode.0.4" out="dst" in="src1"/>
+		<RegOperand group="reg32" field="opcode.0.3" out="dst" in="src1"/>
 		<Syntax mode="intel">inc $dst</Syntax>
 		<Syntax mode="att">inc{l} $dst</Syntax>
 	</Insn>
@@ -83,10 +83,10 @@
 	</Insn>
 	<Insn id="INC64r">
 		<SetField field="opcode" value="0xFF"/>
-		<SetField field="opersize" value="64"/>
+		<SetField field="rex.w" value="1"/>
 		<SetField field="modrm.mod" value="3"/>
 		<SetField field="modrm.reg" value="0"/>
-		<RegOperand group="reg32" field="modrm.rm" out="dst" in="src1"/>
+		<RegOperand group="reg64" field="modrm.rm" out="dst" in="src1"/>
 		<Syntax mode="intel">inc $dst</Syntax>
 		<Syntax mode="att">inc{q} $dst</Syntax>
 	</Insn>

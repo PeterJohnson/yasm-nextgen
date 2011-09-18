@@ -46,12 +46,12 @@ isa = element Isa {
 	}
 codefillref = element CodeFillRef {
 	attribute idref { text },
-	attribute default { "true" }?,
+	attribute default { "true"|"false" }?,
 	nm+
 	}
 formatref = element FormatRef {
 	attribute idref { text },
-	attribute default { "true" }?
+	attribute default { "true"|"false" }?
 	}
 featuremap = element FeatureMap {
 	element FromFeatures { featureref+ },
@@ -82,14 +82,14 @@ formats = element Formats { (format|field)+ }
 format = element Format {
 	attribute id { text },
 	attribute type { "bytesequence" },
-	(byte|bytes)+
+	(byte|bytes|specialfield)+
 	}
 byte = element Byte {
-	attribute optional { "true" }?,
+	attribute optional { "true"|"false" }?,
 	(field|fieldref)+
 	}
 bytes = element Bytes {
-	attribute optional { "true" }?,
+	attribute optional { "true"|"false" }?,
 	(field|fieldref)+
 	}
 field = element Field {
@@ -97,8 +97,10 @@ field = element Field {
 	attribute offset { xsd:int }?,
 	attribute size { xsd:int }?,
 	attribute shift { xsd:int }?,
-	attribute special { text }?,
-	attribute overwrite { "true" }?,
+	attribute signed { "true"|"false" }?,
+	attribute endian { "big"|"little" }?,
+	attribute overwrite { "true"|"false" }?,
+	attribute exclusive { "true"|"false" }?,
 	fieldmatch*
 	}
 fieldmatch = element FieldMatch {
@@ -107,6 +109,10 @@ fieldmatch = element FieldMatch {
 	}
 fieldvalue = element FieldValue { text }
 number = element Number { text }
+specialfield = element SpecialField {
+	attribute id { text },
+	attribute handler { text }
+	}
 
 # Instructions
 insns = element Insns { insn+ }

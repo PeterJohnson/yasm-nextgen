@@ -54,13 +54,24 @@
 		<!--<Field id="lockrep" optional="true"></Field>-->
 		<Bytes>
 			<Field id="opcode"/>
-			<Field id="opcode.0.4" offset="0" size="4" shift="0" overwrite="true"/>
+			<Field id="opcode.0.3" offset="0" size="3" shift="0" overwrite="true"/>
 		</Bytes>
 		<Byte optional="true">
-			<Field id="modrm.mod" size="2" shift="6" special="modrm16_mod()"/>
-			<Field id="modrm.reg" size="3" shift="3" special="modrm16_reg()"/>
-			<Field id="modrm.rm" size="3" shift="0" special="modrm16_rm()"/>
+			<Field id="modrm.mod" size="2" shift="6"/>
+			<Field id="modrm.reg" size="3" shift="3"/>
+			<Field id="modrm.rm" size="3" shift="0"/>
 		</Byte>
+		<Bytes optional="true">
+			<Field id="disp8" size="8" signed="true" exclusive="true"/>
+			<Field id="disp16" size="16" signed="true" exclusive="true" endian="little"/>
+		</Bytes>
+		<Bytes optional="true">
+			<Field id="imm8" size="8" signed="false" exclusive="true"/>
+			<Field id="imm8s" size="8" signed="true" exclusive="true"/>
+			<Field id="imm16" size="16" signed="false" exclusive="true" endian="little"/>
+			<Field id="imm16s" size="16" signed="true" exclusive="true" endian="little"/>
+		</Bytes>
+		<SpecialField id="ea" handler="ea16"/>
 	</Format>
 
 	<Format id="basic32" type="bytesequence">
@@ -90,16 +101,29 @@
 		<!--<Field id="lockrep" optional="true"></Field>-->
 		<Bytes>
 			<Field id="opcode"/>
-			<Field id="opcode.0.4" offset="0" size="4" shift="0" overwrite="true"/>
+			<Field id="opcode.0.3" offset="0" size="3" shift="0" overwrite="true"/>
 		</Bytes>
 		<Byte optional="true">
-			<Field id="modrm.mod" size="2" shift="6" special="modrm32_mod()"/>
-			<Field id="modrm.reg" size="3" shift="3" special="modrm32_reg()"/>
-			<Field id="modrm.rm" size="3" shift="0" special="modrm32_rm()"/>
+			<Field id="modrm.mod" size="2" shift="6"/>
+			<Field id="modrm.reg" size="3" shift="3"/>
+			<Field id="modrm.rm" size="3" shift="0"/>
 		</Byte>
 		<Byte optional="true">
-			<Field id="sib" size="8" shift="0" special="sib32()"/>
+			<Field id="sib" size="8" shift="0"/>
 		</Byte>
+		<Bytes optional="true">
+			<Field id="disp8" size="8" signed="true" exclusive="true"/>
+			<Field id="disp32" size="32" signed="true" exclusive="true" endian="little"/>
+		</Bytes>
+		<Bytes optional="true">
+			<Field id="imm8" size="8" signed="false" exclusive="true"/>
+			<Field id="imm8s" size="8" signed="true" exclusive="true"/>
+			<Field id="imm16" size="16" signed="false" exclusive="true" endian="little"/>
+			<Field id="imm16s" size="16" signed="true" exclusive="true" endian="little"/>
+			<Field id="imm32" size="32" signed="false" exclusive="true" endian="little"/>
+			<Field id="imm32s" size="32" signed="true" exclusive="true" endian="little"/>
+		</Bytes>
+		<SpecialField id="ea" handler="ea32"/>
 	</Format>
 
 	<Format id="basic64" type="bytesequence">
@@ -116,7 +140,15 @@
 			</Field>
 		</Byte>
 		<Byte optional="true">
-			<Field id="opersize" size="8" shift="0" special="opersize64()"/>
+			<Field id="opersize" size="8" shift="0">
+				<FieldMatch>
+					<Number>16</Number>
+					<FieldValue>0x67</FieldValue>
+				</FieldMatch>
+				<FieldMatch>
+					<Number>32</Number>
+				</FieldMatch>
+			</Field>
 		</Byte>
 		<!--<Field id="lockrep" optional="true"></Field>-->
 		<Byte optional="true">
@@ -126,23 +158,43 @@
 					<FieldValue>0x4</FieldValue>
 				</FieldMatch>
 			</Field>
-			<Field id="rex.w" size="1" shift="3" special="rex_w()"/>
-			<Field id="rex.r" size="1" shift="2" special="rex_r()"/>
-			<Field id="rex.x" size="1" shift="1" special="rex_x()"/>
-			<Field id="rex.b" size="1" shift="0" special="rex_b()"/>
+			<Field id="rex.w" size="1" shift="3"/>
+			<Field id="rex.r" size="1" shift="2"/>
+			<Field id="rex.x" size="1" shift="1"/>
+			<Field id="rex.b" size="1" shift="0"/>
 		</Byte>
 		<Bytes>
 			<Field id="opcode"/>
-			<Field id="opcode.0.4" offset="0" size="4" shift="0" overwrite="true"/>
+			<Field id="opcode.0.3" offset="0" size="3" shift="0" overwrite="true"/>
 		</Bytes>
 		<Byte optional="true">
-			<Field id="modrm.mod" size="2" shift="6" special="modrm64_mod()"/>
-			<Field id="modrm.reg" size="3" shift="3" special="modrm64_reg()"/>
-			<Field id="modrm.rm" size="3" shift="0" special="modrm64_rm()"/>
+			<Field id="modrm.mod.inner" size="2" shift="6"/>
+			<Field id="modrm.reg.inner" size="3" shift="3"/>
+			<Field id="modrm.rm.inner" size="3" shift="0"/>
 		</Byte>
 		<Byte optional="true">
-			<Field id="sib" size="8" shift="0" special="sib64()"/>
+			<Field id="sib" size="8" shift="0"/>
 		</Byte>
+		<Bytes optional="true">
+			<Field id="disp8" size="8" signed="true" exclusive="true"/>
+			<Field id="disp32" size="32" signed="true" exclusive="true" endian="little"/>
+			<!-- used only for special mov -->
+			<Field id="disp64" size="64" exclusive="true" endian="little"/>
+		</Bytes>
+		<Bytes optional="true">
+			<Field id="imm8" size="8" signed="false" exclusive="true"/>
+			<Field id="imm8s" size="8" signed="true" exclusive="true"/>
+			<Field id="imm16" size="16" signed="false" exclusive="true" endian="little"/>
+			<Field id="imm16s" size="16" signed="true" exclusive="true" endian="little"/>
+			<Field id="imm32" size="32" signed="false" exclusive="true" endian="little"/>
+			<Field id="imm32s" size="32" signed="true" exclusive="true" endian="little"/>
+			<!-- used only for special mov -->
+			<Field id="disp64" size="64" exclusive="true" endian="little"/>
+		</Bytes>
+		<SpecialField id="ea" handler="ea64"/>
+		<SpecialField id="modrm.mod" handler="modrm64_mod"/>
+		<SpecialField id="modrm.reg" handler="modrm64_reg"/>
+		<SpecialField id="modrm.rm" handler="modrm64_rm"/>
 	</Format>
 
 	<!--
