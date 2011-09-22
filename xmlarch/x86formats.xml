@@ -189,7 +189,7 @@
 			<Field id="imm32" size="32" signed="false" exclusive="true" endian="little"/>
 			<Field id="imm32s" size="32" signed="true" exclusive="true" endian="little"/>
 			<!-- used only for special mov -->
-			<Field id="disp64" size="64" exclusive="true" endian="little"/>
+			<Field id="imm64" size="64" exclusive="true" endian="little"/>
 		</Bytes>
 		<SpecialField id="ea" handler="ea64"/>
 		<SpecialField id="modrm.mod" handler="modrm64_mod"/>
