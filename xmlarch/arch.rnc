@@ -78,10 +78,9 @@ cpu = element Cpu {
 	}
 
 # Formats
-formats = element Formats { (format|field)+ }
-format = element Format {
+formats = element Formats { (bytesequenceformat|field)+ }
+bytesequenceformat = element ByteSequenceFormat {
 	attribute id { text },
-	attribute type { "bytesequence" },
 	(byte|bytes|specialfield)+
 	}
 byte = element Byte {

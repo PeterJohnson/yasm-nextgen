@@ -27,7 +27,7 @@
 		</FieldMatch>
 	</Field>
 
-	<Format id="basic16" type="bytesequence">
+	<ByteSequenceFormat id="basic16">
 		<Byte optional="true"><FieldRef idref="segprefix"/></Byte>
 		<Byte optional="true">
 			<Field id="addrsize" size="8" shift="0">
@@ -72,9 +72,9 @@
 			<Field id="imm16s" size="16" signed="true" exclusive="true" endian="little"/>
 		</Bytes>
 		<SpecialField id="ea" handler="ea16"/>
-	</Format>
+	</ByteSequenceFormat>
 
-	<Format id="basic32" type="bytesequence">
+	<ByteSequenceFormat id="basic32">
 		<Byte optional="true"><FieldRef idref="segprefix"/></Byte>
 		<Byte optional="true">
 			<Field id="addrsize" size="8" shift="0">
@@ -124,9 +124,9 @@
 			<Field id="imm32s" size="32" signed="true" exclusive="true" endian="little"/>
 		</Bytes>
 		<SpecialField id="ea" handler="ea32"/>
-	</Format>
+	</ByteSequenceFormat>
 
-	<Format id="basic64" type="bytesequence">
+	<ByteSequenceFormat id="basic64">
 		<Byte optional="true"><FieldRef idref="segprefix"/></Byte>
 		<Byte optional="true">
 			<Field id="addrsize" size="8" shift="0">
@@ -140,7 +140,7 @@
 			</Field>
 		</Byte>
 		<Byte optional="true">
-			<Field id="opersize" size="8" shift="0">
+			<Field id="opersize.inner" size="8" shift="0">
 				<FieldMatch>
 					<Number>16</Number>
 					<FieldValue>0x67</FieldValue>
@@ -195,7 +195,8 @@
 		<SpecialField id="modrm.mod" handler="modrm64_mod"/>
 		<SpecialField id="modrm.reg" handler="modrm64_reg"/>
 		<SpecialField id="modrm.rm" handler="modrm64_rm"/>
-	</Format>
+		<SpecialField id="opersize" handler="opersize64"/>
+	</ByteSequenceFormat>
 
 	<!--
 	<Format id="vex3">
