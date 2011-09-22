@@ -17,6 +17,12 @@
 		<xsl:value-of select="normalize-space(.)"/>
 	</xsl:template>
 
+	<xsl:template match="Code/text()">
+		<xsl:copy>
+			<xsl:apply-templates/>
+		</xsl:copy>
+	</xsl:template>
+
 	<!--<xsl:template match="comment()"/>-->
 
 </xsl:stylesheet>

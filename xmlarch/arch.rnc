@@ -4,7 +4,7 @@ arch = element Arch {
 	attribute id { text },
 	nm+,
 	descr,
-	(fills & registers & isas & features & cpus & formats & insns)
+	(fills & registers & isas & features & cpus & formats & insns & code*)
 	}
 
 # Code fill
@@ -147,6 +147,12 @@ syntax = element Syntax {
 	text
 	}
 constraint = element Constraint {
+	text
+	}
+
+# Support code
+code = element Code {
+	attribute lang { text },
 	text
 	}
 
