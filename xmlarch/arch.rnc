@@ -100,6 +100,7 @@ field = element Field {
 	attribute endian { "big"|"little" }?,
 	attribute overwrite { "true"|"false" }?,
 	attribute exclusive { "true"|"false" }?,
+	attribute default { xsd:int }?,
 	fieldmatch*
 	}
 fieldmatch = element FieldMatch {

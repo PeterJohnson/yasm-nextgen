@@ -54,7 +54,7 @@
 		<!--<Field id="lockrep" optional="true"></Field>-->
 		<Bytes>
 			<Field id="opcode"/>
-			<Field id="opcode.0.3" offset="0" size="3" shift="0" overwrite="true"/>
+			<Field id="opcode.reg" offset="0" size="3" shift="0" overwrite="true"/>
 		</Bytes>
 		<Byte optional="true">
 			<Field id="modrm.mod" size="2" shift="6"/>
@@ -101,7 +101,7 @@
 		<!--<Field id="lockrep" optional="true"></Field>-->
 		<Bytes>
 			<Field id="opcode"/>
-			<Field id="opcode.0.3" offset="0" size="3" shift="0" overwrite="true"/>
+			<Field id="opcode.reg" offset="0" size="3" shift="0" overwrite="true"/>
 		</Bytes>
 		<Byte optional="true">
 			<Field id="modrm.mod" size="2" shift="6"/>
@@ -109,7 +109,9 @@
 			<Field id="modrm.rm" size="3" shift="0"/>
 		</Byte>
 		<Byte optional="true">
-			<Field id="sib" size="8" shift="0"/>
+			<Field id="sib.scale" size="2" shift="6"/>
+			<Field id="sib.index" size="3" shift="3"/>
+			<Field id="sib.base" size="3" shift="0"/>
 		</Byte>
 		<Bytes optional="true">
 			<Field id="disp8" size="8" signed="true" exclusive="true"/>
@@ -158,22 +160,24 @@
 					<FieldValue>0x4</FieldValue>
 				</FieldMatch>
 			</Field>
-			<Field id="rex.w" size="1" shift="3"/>
-			<Field id="rex.r" size="1" shift="2"/>
-			<Field id="rex.x" size="1" shift="1"/>
-			<Field id="rex.b" size="1" shift="0"/>
+			<Field id="rex.w" size="1" shift="3" default="0"/>
+			<Field id="rex.r" size="1" shift="2" default="0"/>
+			<Field id="rex.x" size="1" shift="1" default="0"/>
+			<Field id="rex.b" size="1" shift="0" default="0"/>
 		</Byte>
 		<Bytes>
 			<Field id="opcode"/>
-			<Field id="opcode.0.3" offset="0" size="3" shift="0" overwrite="true"/>
+			<Field id="opcode.reg.inner" offset="0" size="3" shift="0" overwrite="true"/>
 		</Bytes>
 		<Byte optional="true">
-			<Field id="modrm.mod.inner" size="2" shift="6"/>
+			<Field id="modrm.mod" size="2" shift="6"/>
 			<Field id="modrm.reg.inner" size="3" shift="3"/>
 			<Field id="modrm.rm.inner" size="3" shift="0"/>
 		</Byte>
 		<Byte optional="true">
-			<Field id="sib" size="8" shift="0"/>
+			<Field id="sib.scale" size="2" shift="6"/>
+			<Field id="sib.index.inner" size="3" shift="3"/>
+			<Field id="sib.base.inner" size="3" shift="0"/>
 		</Byte>
 		<Bytes optional="true">
 			<Field id="disp8" size="8" signed="true" exclusive="true"/>
@@ -192,10 +196,12 @@
 			<Field id="imm64" size="64" exclusive="true" endian="little"/>
 		</Bytes>
 		<SpecialField id="ea" handler="ea64"/>
-		<SpecialField id="modrm.mod" handler="modrm64_mod"/>
 		<SpecialField id="modrm.reg" handler="modrm64_reg"/>
 		<SpecialField id="modrm.rm" handler="modrm64_rm"/>
+		<SpecialField id="sib.index" handler="sib64_index"/>
+		<SpecialField id="sib.base" handler="sib64_base"/>
 		<SpecialField id="opersize" handler="opersize64"/>
+		<SpecialField id="opcode.reg" handler="opcodereg64"/>
 	</ByteSequenceFormat>
 
 	<!--

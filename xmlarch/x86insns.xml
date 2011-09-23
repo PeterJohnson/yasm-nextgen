@@ -44,14 +44,14 @@
 	<Insn id="INC16r" formats="basic16,basic32">
 		<SetField field="opcode" value="0x40"/>
 		<SetField field="opersize" value="16"/>
-		<RegOperand group="reg16" field="opcode.0.3" out="dst" in="src1"/>
+		<RegOperand group="reg16" field="opcode.reg" out="dst" in="src1"/>
 		<Syntax mode="intel">inc $dst</Syntax>
 		<Syntax mode="att">inc{w} $dst</Syntax>
 	</Insn>
 	<Insn id="INC32r" formats="basic16,basic32">
 		<SetField field="opcode" value="0x40"/>
 		<SetField field="opersize" value="32"/>
-		<RegOperand group="reg32" field="opcode.0.3" out="dst" in="src1"/>
+		<RegOperand group="reg32" field="opcode.reg" out="dst" in="src1"/>
 		<Syntax mode="intel">inc $dst</Syntax>
 		<Syntax mode="att">inc{l} $dst</Syntax>
 	</Insn>
